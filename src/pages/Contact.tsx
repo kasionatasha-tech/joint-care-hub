@@ -1,0 +1,283 @@
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { Mail, Phone, MapPin, Clock, Send, MessageCircle } from "lucide-react";
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
+
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
+  const { toast } = useToast();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast({
+      title: "Повідомлення відправлено!",
+      description: "Дякуємо за ваше звернення. Ми відповімо найближчим часом.",
+    });
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: ""
+    });
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const contactInfo = [
+    {
+      icon: Mail,
+      title: "Email",
+      content: "info@zdravisuglobs.org",
+      description: "Напишіть нам в будь-який час"
+    },
+    {
+      icon: Phone,
+      title: "Телефон",
+      content: "+380 (44) 123-45-67",
+      description: "Пн-Пт: 9:00-18:00"
+    },
+    {
+      icon: MapPin,
+      title: "Адреса",
+      content: "м. Київ, вул. Здоров'я, 15",
+      description: "Офіс громадської організації"
+    },
+    {
+      icon: Clock,
+      title: "Час роботи",
+      content: "Пн-Пт: 9:00-18:00",
+      description: "Вихідні: за домовленістю"
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Header />
+      
+      <main>
+        {/* Hero Section */}
+        <section className="py-16 md:py-24 bg-gradient-soft">
+          <div className="container mx-auto px-4 text-center">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              Зв'яжіться з нами
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Маєте запитання, потребуєте допомоги або хочете поділитися своєю історією? 
+              Ми завжди готові вас вислухати та допомогти.
+            </p>
+          </div>
+        </section>
+
+        {/* Contact Form and Info */}
+        <section className="py-16 md:py-24">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              {/* Contact Form */}
+              <div>
+                <div className="mb-8">
+                  <h2 className="text-3xl font-bold text-foreground mb-4">
+                    Написати нам
+                  </h2>
+                  <p className="text-muted-foreground">
+                    Заповніть форму нижче, і ми зв'яжемося з вами найближчим часом. 
+                    Усі звернення розглядаються індивідуально.
+                  </p>
+                </div>
+
+                <Card className="shadow-card border-0">
+                  <CardHeader>
+                    <CardTitle className="flex items-center">
+                      <MessageCircle className="w-5 h-5 mr-2 text-primary" />
+                      Форма зв'язку
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                          <Label htmlFor="name">Ім'я *</Label>
+                          <Input
+                            id="name"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            placeholder="Ваше ім'я"
+                            required
+                          />
+                        </div>
+                        <div>
+                          <Label htmlFor="email">Email *</Label>
+                          <Input
+                            id="email"
+                            name="email"
+                            type="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            placeholder="example@email.com"
+                            required
+                          />
+                        </div>
+                      </div>
+
+                      <div>
+                        <Label htmlFor="subject">Тема звернення *</Label>
+                        <Input
+                          id="subject"
+                          name="subject"
+                          value={formData.subject}
+                          onChange={handleChange}
+                          placeholder="Коротко опишіть суть вашого питання"
+                          required
+                        />
+                      </div>
+
+                      <div>
+                        <Label htmlFor="message">Повідомлення *</Label>
+                        <Textarea
+                          id="message"
+                          name="message"
+                          value={formData.message}
+                          onChange={handleChange}
+                          placeholder="Детально опишіть ваше питання або проблему..."
+                          rows={6}
+                          required
+                        />
+                      </div>
+
+                      <Button type="submit" size="lg" className="w-full">
+                        <Send className="w-4 h-4 mr-2" />
+                        Відправити повідомлення
+                      </Button>
+
+                      <p className="text-sm text-muted-foreground text-center">
+                        * Обов'язкові поля. Ваші дані захищені і використовуються лише для зв'язку з вами.
+                      </p>
+                    </form>
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Contact Information */}
+              <div className="space-y-8">
+                <div>
+                  <h2 className="text-3xl font-bold text-foreground mb-4">
+                    Контактна інформація
+                  </h2>
+                  <p className="text-muted-foreground mb-8">
+                    Оберіть найзручніший для вас спосіб зв'язку. 
+                    Ми відповідаємо на всі звернення протягом 24 годин.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-6">
+                  {contactInfo.map((info, index) => {
+                    const IconComponent = info.icon;
+                    return (
+                      <Card key={index} className="shadow-card border-0 bg-white">
+                        <CardContent className="p-6">
+                          <div className="flex items-start space-x-4">
+                            <div className="w-12 h-12 bg-gradient-healing rounded-xl flex items-center justify-center flex-shrink-0">
+                              <IconComponent className="w-6 h-6 text-white" />
+                            </div>
+                            <div>
+                              <h4 className="font-semibold text-foreground mb-1">
+                                {info.title}
+                              </h4>
+                              <div className="text-lg font-medium text-primary mb-1">
+                                {info.content}
+                              </div>
+                              <p className="text-sm text-muted-foreground">
+                                {info.description}
+                              </p>
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    );
+                  })}
+                </div>
+
+                {/* FAQ Section */}
+                <Card className="shadow-card border-0 bg-gradient-soft">
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold text-foreground mb-4">
+                      Часті запитання
+                    </h3>
+                    <div className="space-y-4">
+                      <div>
+                        <h5 className="font-medium text-foreground mb-1">
+                          Як швидко ви відповідаєте на повідомлення?
+                        </h5>
+                        <p className="text-sm text-muted-foreground">
+                          Зазвичай ми відповідаємо протягом 24 годин у робочі дні.
+                        </p>
+                      </div>
+                      <div>
+                        <h5 className="font-medium text-foreground mb-1">
+                          Чи безкоштовні ваші консультації?
+                        </h5>
+                        <p className="text-sm text-muted-foreground">
+                          Так, усі базові консультації та участь у зустрічах безкоштовні.
+                        </p>
+                      </div>
+                      <div>
+                        <h5 className="font-medium text-foreground mb-1">
+                          Чи можу я залишитися анонімним?
+                        </h5>
+                        <p className="text-sm text-muted-foreground">
+                          Звичайно, ми поважаємо вашу приватність та конфіденційність.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Emergency Contact */}
+        <section className="py-16 md:py-24 bg-gradient-healing text-white">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Потрібна термінова допомога?
+            </h2>
+            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+              Якщо у вас гострий біль або невідкладна ситуація, 
+              зверніться до швидкої медичної допомоги за номером 103
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button variant="secondary" size="lg">
+                <Phone className="w-4 h-4 mr-2" />
+                Швидка допомога: 103
+              </Button>
+              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-gray-900">
+                Наша гаряча лінія: +380 (44) 123-45-67
+              </Button>
+            </div>
+          </div>
+        </section>
+      </main>
+      
+      <Footer />
+    </div>
+  );
+};
+
+export default Contact;
