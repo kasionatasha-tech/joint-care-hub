@@ -56,10 +56,10 @@ const Meetings = () => {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Онлайн зустрічі
+                Офлайн зустрічі
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Приєднуйтесь до наших регулярних онлайн-сесій, де експерти діляться знаннями, 
+                Приєднуйтесь до наших регулярних офлайн-сесій, де експерти діляться знаннями, 
                 а учасники — досвідом у боротьбі з проблемами суглобів.
               </p>
             </div>
@@ -115,7 +115,7 @@ const Meetings = () => {
                         <Video className="w-5 h-5 text-primary mr-3" />
                         <div>
                           <div className="text-sm text-muted-foreground">Формат</div>
-                          <div className="font-medium">Онлайн (Zoom)</div>
+                          <div className="font-medium">Офлайн зустріч</div>
                         </div>
                       </div>
                     </div>
@@ -178,9 +178,9 @@ const Meetings = () => {
                   <CardContent className="p-6">
                     <div className="text-center">
                       <MapPin className="w-8 h-8 text-primary mx-auto mb-3" />
-                      <h4 className="font-semibold text-foreground mb-2">Онлайн формат</h4>
+                      <h4 className="font-semibold text-foreground mb-2">Офлайн формат</h4>
                       <p className="text-sm text-muted-foreground">
-                        Приєднуйтесь з будь-якого місця. Посилання на зустріч надсилається після реєстрації.
+                        Зустрічаємося особисто. Адреса та деталі надсилаються після реєстрації.
                       </p>
                     </div>
                   </CardContent>

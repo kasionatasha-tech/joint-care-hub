@@ -10,9 +10,9 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-8 h-8 bg-gradient-healing rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">ЗС</span>
+                <span className="text-white font-bold text-sm">OC</span>
               </div>
-              <span className="text-xl font-semibold text-foreground">Здорові Суглоби</span>
+              <span className="text-xl font-semibold text-foreground">Osnova Care</span>
             </div>
             <p className="text-muted-foreground mb-4 max-w-md">
               Ми допомагаємо людям з проблемами суглобів жити повноцінним життям. 
@@ -35,7 +35,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/meetings" className="text-muted-foreground hover:text-primary transition-colors">
-                  Онлайн зустрічі
+                  Офлайн зустрічі
                 </Link>
               </li>
               <li>
@@ -74,7 +74,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-border mt-8 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-muted-foreground text-sm">
-            © 2024 Здорові Суглоби. Всі права захищені.
+            © 2024 Osnova Care. Всі права захищені.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link to="/privacy" className="text-muted-foreground hover:text-primary transition-colors text-sm">

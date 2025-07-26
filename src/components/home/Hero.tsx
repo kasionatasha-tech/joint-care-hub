@@ -26,7 +26,7 @@ const Hero = () => {
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-card border border-border">
               <div className="flex items-center mb-3">
                 <Calendar className="w-5 h-5 text-primary mr-2" />
-                <span className="text-sm font-medium text-primary">Найближча онлайн-зустріч</span>
+                <span className="text-sm font-medium text-primary">Найближча офлайн-зустріч</span>
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-2">
                 "Вправи для здоров'я колін: від болю до свободи руху"

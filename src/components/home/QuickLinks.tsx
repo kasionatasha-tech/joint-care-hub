@@ -7,8 +7,8 @@ const QuickLinks = () => {
   const sections = [
     {
       icon: Calendar,
-      title: "Онлайн зустрічі",
-      description: "Приєднуйтесь до наших регулярних онлайн-сесій з експертами та іншими учасниками",
+      title: "Офлайн зустрічі",
+      description: "Приєднуйтесь до наших регулярних офлайн-сесій з експертами та іншими учасниками",
       link: "/meetings",
       color: "bg-gradient-to-br from-green-500 to-blue-500"
     },
