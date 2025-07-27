@@ -9,10 +9,11 @@ const Footer = () => {
           {/* Logo and Mission */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-healing rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">OC</span>
-              </div>
-              <span className="text-xl font-semibold text-foreground">Osnova Care</span>
+              <img 
+                src="/lovable-uploads/6978bb6d-593a-4a72-8c73-17f68ebfa2a6.png" 
+                alt="Osnova Care" 
+                className="h-8 w-auto"
+              />
             </div>
             <p className="text-muted-foreground mb-4 max-w-md">
               Ми допомагаємо людям з проблемами суглобів жити повноцінним життям. 

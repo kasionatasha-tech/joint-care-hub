@@ -24,10 +24,11 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-healing rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">OC</span>
-            </div>
-            <span className="text-xl font-semibold text-foreground">Osnova Care</span>
+            <img 
+              src="/lovable-uploads/6978bb6d-593a-4a72-8c73-17f68ebfa2a6.png" 
+              alt="Osnova Care" 
+              className="h-8 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
