@@ -11,14 +11,14 @@ const Hero = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                Активне життя з{" "}
+                Активне життя{" "}
                 <span className="bg-gradient-healing bg-clip-text text-transparent">
-                  здоровими суглобами
+                  без болю і обмежень
                 </span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
-                Покращуємо якість життя людей із захворюваннями опорно-рухового апарату через доступну інформацію, 
-                освітні ресурси, підтримку реабілітації та просвітницьку діяльність.
+                Покращуємо добробут людей із труднощами руху завдяки відкритій інформації, 
+                навчальним ресурсам і просвітницьким ініціативам.
               </p>
             </div>
 
