@@ -11,14 +11,14 @@ const Hero = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                Турбота про ваші{" "}
+                Активне життя з{" "}
                 <span className="bg-gradient-healing bg-clip-text text-transparent">
-                  суглоби
+                  здоровими суглобами
                 </span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
-                Приєднуйтесь до спільноти людей, які борються з проблемами суглобів. 
-                Отримайте підтримку, знання та професійні поради від експертів.
+                Покращуємо якість життя людей із захворюваннями опорно-рухового апарату через доступну інформацію, 
+                освітні ресурси, підтримку реабілітації та просвітницьку діяльність.
               </p>
             </div>
 
