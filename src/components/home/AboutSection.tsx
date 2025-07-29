@@ -46,9 +46,9 @@ const AboutSection = () => {
             Наша місія
           </h3>
           <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
-            Наша ціль — стати провідною організацією в Україні з підтримки людей із захворюваннями 
-            опорно-рухового апарату, забезпечуючи комплексний підхід до реабілітації, освіти та створення 
-            спільноти взаємної підтримки для досягнення активного та повноцінного життя.
+            Ми прагнемо зробити життя людей із труднощами руху більш незалежним і повноцінним. 
+            Через відкриту освіту, просвітницькі ініціативи та розвиток спільноти ми підтримуємо тих, 
+            хто стикається з фізичними викликами, і допомагаємо знайти нові можливості для участі в житті суспільства.
           </p>
         </div>
 
@@ -74,19 +74,19 @@ const AboutSection = () => {
           })}
         </div>
 
-        {/* Statistics */}
+        {/* Features */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-center">
-            <div className="text-4xl md:text-5xl font-bold text-primary mb-2">1,200+</div>
-            <div className="text-muted-foreground">Активних учасників</div>
+            <div className="text-4xl md:text-5xl font-bold text-primary mb-2">24/7</div>
+            <div className="text-muted-foreground">Онлайн підтримка</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl md:text-5xl font-bold text-primary mb-2">85%</div>
-            <div className="text-muted-foreground">Покращили стан здоров'я</div>
+            <div className="text-4xl md:text-5xl font-bold text-primary mb-2">100%</div>
+            <div className="text-muted-foreground">Безкоштовно</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl md:text-5xl font-bold text-primary mb-2">50+</div>
-            <div className="text-muted-foreground">Проведених зустрічей</div>
+            <div className="text-4xl md:text-5xl font-bold text-primary mb-2">∞</div>
+            <div className="text-muted-foreground">Можливостей для розвитку</div>
           </div>
         </div>
       </div>
