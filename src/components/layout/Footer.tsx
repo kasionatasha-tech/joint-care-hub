@@ -50,6 +50,11 @@ const Footer = () => {
                   Корисні статті
                 </Link>
               </li>
+              <li>
+                <Link to="/documents" className="text-muted-foreground hover:text-primary transition-colors">
+                  Наші документи
+                </Link>
+              </li>
             </ul>
           </div>
 

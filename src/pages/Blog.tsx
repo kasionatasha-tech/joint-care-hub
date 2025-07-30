@@ -3,10 +3,16 @@ import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Clock, User, ArrowRight, Tag } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Calendar, Clock, User, ArrowRight, Tag, Search } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Blog = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("Всі");
+  const [selectedDisease, setSelectedDisease] = useState("Всі захворювання");
+
   const articles = [
     {
       id: 1,
@@ -17,6 +23,7 @@ const Blog = () => {
       date: "20 лютого 2024",
       readTime: "5 хв",
       category: "Вправи",
+      disease: "Артроз колін",
       featured: true,
       image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=300&fit=crop"
     },
@@ -29,6 +36,7 @@ const Blog = () => {
       date: "18 лютого 2024",
       readTime: "8 хв",
       category: "Харчування",
+      disease: "Ревматоїдний артрит",
       featured: false,
       image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&h=300&fit=crop"
     },
@@ -41,6 +49,7 @@ const Blog = () => {
       date: "15 лютого 2024",
       readTime: "6 хв",
       category: "Діагностика",
+      disease: "Остеоартроз",
       featured: false,
       image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=300&fit=crop"
     },
@@ -53,6 +62,7 @@ const Blog = () => {
       date: "12 лютого 2024",
       readTime: "7 хв",
       category: "Фізіотерапія",
+      disease: "Спондилоартрит",
       featured: false,
       image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=300&fit=crop"
     },
@@ -65,6 +75,7 @@ const Blog = () => {
       date: "10 лютого 2024",
       readTime: "5 хв",
       category: "Профілактика",
+      disease: "Артроз колін",
       featured: false,
       image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=300&fit=crop"
     },
@@ -77,15 +88,28 @@ const Blog = () => {
       date: "8 лютого 2024",
       readTime: "10 хв",
       category: "Психологія",
+      disease: "Фіброміалгія",
       featured: false,
       image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=300&fit=crop"
     }
   ];
 
   const categories = ["Всі", "Вправи", "Харчування", "Діагностика", "Фізіотерапія", "Профілактика", "Психологія"];
+  const diseases = ["Всі захворювання", "Артроз колін", "Ревматоїдний артрит", "Остеоартроз", "Спондилоартрит", "Фіброміалгія"];
 
-  const featuredArticle = articles.find(article => article.featured);
-  const regularArticles = articles.filter(article => !article.featured);
+  // Filter articles based on search term, category, and disease
+  const filteredArticles = articles.filter(article => {
+    const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         article.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         article.author.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory = selectedCategory === "Всі" || article.category === selectedCategory;
+    const matchesDisease = selectedDisease === "Всі захворювання" || article.disease === selectedDisease;
+    
+    return matchesSearch && matchesCategory && matchesDisease;
+  });
+
+  const featuredArticle = filteredArticles.find(article => article.featured);
+  const regularArticles = filteredArticles.filter(article => !article.featured);
 
   return (
     <div className="min-h-screen bg-background">
@@ -98,10 +122,22 @@ const Blog = () => {
             <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               Корисний блог
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               Дізнавайтесь найсвіжішу інформацію про здоров'я суглобів, 
               профілактику захворювань та ефективні методи лікування від наших експертів.
             </p>
+            
+            {/* Search Bar */}
+            <div className="max-w-md mx-auto relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+              <Input
+                type="text"
+                placeholder="Пошук статей..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="pl-10 bg-white shadow-sm"
+              />
+            </div>
           </div>
         </section>
 
@@ -172,20 +208,39 @@ const Blog = () => {
           </section>
         )}
 
-        {/* Categories */}
+        {/* Filters */}
         <section className="py-8 bg-white border-y border-border">
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto px-4 space-y-4">
+            {/* Categories */}
             <div className="flex items-center gap-2 overflow-x-auto pb-2">
               <Tag className="w-4 h-4 text-muted-foreground flex-shrink-0" />
               <span className="text-sm font-medium text-muted-foreground whitespace-nowrap">Категорії:</span>
-              {categories.map((category, index) => (
+              {categories.map((category) => (
                 <Button
-                  key={index}
-                  variant={index === 0 ? "default" : "outline"}
+                  key={category}
+                  variant={selectedCategory === category ? "default" : "outline"}
                   size="sm"
                   className="whitespace-nowrap"
+                  onClick={() => setSelectedCategory(category)}
                 >
                   {category}
+                </Button>
+              ))}
+            </div>
+            
+            {/* Disease Filters */}
+            <div className="flex items-center gap-2 overflow-x-auto pb-2">
+              <Tag className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+              <span className="text-sm font-medium text-muted-foreground whitespace-nowrap">Захворювання:</span>
+              {diseases.map((disease) => (
+                <Button
+                  key={disease}
+                  variant={selectedDisease === disease ? "default" : "outline"}
+                  size="sm"
+                  className="whitespace-nowrap"
+                  onClick={() => setSelectedDisease(disease)}
+                >
+                  {disease}
                 </Button>
               ))}
             </div>
