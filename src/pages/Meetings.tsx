@@ -87,9 +87,6 @@ const Meetings = () => {
                       <Badge variant="secondary" className="bg-white/20 text-white border-0">
                         НАЙБЛИЖЧА ЗУСТРІЧ
                       </Badge>
-                      <div className="text-white/90 text-sm">
-                        {upcomingMeeting.participants}/{upcomingMeeting.maxParticipants} місць зайнято
-                      </div>
                     </div>
                     <CardTitle className="text-2xl mt-4 text-white">
                       {upcomingMeeting.title}
@@ -218,16 +215,8 @@ const Meetings = () => {
                         <Clock className="w-4 h-4 text-primary mr-2" />
                         <span className="text-muted-foreground">{meeting.duration}</span>
                       </div>
-                      <div className="flex items-center text-sm">
-                        <Users className="w-4 h-4 text-primary mr-2" />
-                        <span className="text-muted-foreground">{meeting.participants} учасників</span>
-                      </div>
                     </div>
-                    <div className="flex items-center justify-between">
-                      <div className="text-sm">
-                        <span className="text-muted-foreground">Рейтинг: </span>
-                        <span className="font-medium text-primary">{meeting.rating}/5.0</span>
-                      </div>
+                    <div className="flex items-center justify-between mt-4">
                       <Button variant="outline" size="sm">
                         Переглянути запис
                       </Button>
