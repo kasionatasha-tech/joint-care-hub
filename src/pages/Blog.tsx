@@ -197,10 +197,12 @@ const Blog = () => {
                       </div>
                     </div>
 
-                    <Button size="lg" className="w-full lg:w-auto">
-                      Читати повністю
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Button>
+                    <Link to={`/article/${featuredArticle.id}`}>
+                      <Button size="lg" className="w-full lg:w-auto">
+                        Читати повністю
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </Card>
@@ -304,10 +306,12 @@ const Blog = () => {
                       </div>
                     </div>
 
-                    <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300">
-                      Читати далі
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                    </Button>
+                    <Link to={`/article/${article.id}`}>
+                      <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300">
+                        Читати далі
+                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                      </Button>
+                    </Link>
                   </CardContent>
                 </Card>
               ))}

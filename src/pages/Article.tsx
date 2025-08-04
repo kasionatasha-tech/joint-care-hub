@@ -3,10 +3,11 @@ import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, User, Share2, BookOpen, ArrowLeft } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Article = () => {
   const navigate = useNavigate();
+  const { id } = useParams();
 
   // Mock article data - в реальному проекті це буде приходити з API або CMS
   const article = {
