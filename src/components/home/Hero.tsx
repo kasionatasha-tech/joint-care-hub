@@ -52,19 +52,6 @@ const Hero = () => {
                 alt="Здорові суглоби"
                 className="w-full h-[500px] object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-healing/80 flex items-center justify-center">
-                <div className="text-center text-white p-8">
-                  <h3 className="text-3xl md:text-4xl font-bold mb-4">
-                    Ваше здоров'я - наш пріоритет
-                  </h3>
-                  <p className="text-lg md:text-xl text-white/90 mb-6 max-w-md mx-auto">
-                    Професійна допомога та підтримка на шляху до здорових суглобів
-                  </p>
-                  <Button size="lg" variant="secondary" className="bg-white text-gray-900 hover:bg-gray-100">
-                    Дізнатись більше
-                  </Button>
-                </div>
-              </div>
             </div>
           </div>
         </div>
