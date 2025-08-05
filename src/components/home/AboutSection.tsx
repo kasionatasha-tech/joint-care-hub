@@ -74,21 +74,6 @@ const AboutSection = () => {
           })}
         </div>
 
-        {/* Features */}
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="text-center">
-            <div className="text-4xl md:text-5xl font-bold text-primary mb-2">24/7</div>
-            <div className="text-muted-foreground">Онлайн підтримка</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl md:text-5xl font-bold text-primary mb-2">100%</div>
-            <div className="text-muted-foreground">Безкоштовно</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl md:text-5xl font-bold text-primary mb-2">∞</div>
-            <div className="text-muted-foreground">Можливостей для розвитку</div>
-          </div>
-        </div>
       </div>
     </section>
   );

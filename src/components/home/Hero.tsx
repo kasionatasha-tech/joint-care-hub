@@ -36,25 +36,12 @@ const Hero = () => {
                   <Clock className="w-4 h-4 mr-1" />
                   15 лютого, 19:00
                 </div>
-                <div className="flex items-center">
-                  <Users className="w-4 h-4 mr-1" />
-                  45 учасників зареєстровано
-                </div>
               </div>
               <Button size="lg" className="w-full md:w-auto">
                 Зареєструватись безкоштовно
               </Button>
             </div>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" variant="outline">
-                Дізнатись більше
-              </Button>
-              <Button size="lg" variant="secondary">
-                Записатись на консультацію
-              </Button>
-            </div>
           </div>
 
           {/* Image */}
@@ -68,20 +55,6 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent" />
             </div>
             
-            {/* Floating Stats */}
-            <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-card border border-border">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary">1000+</div>
-                <div className="text-sm text-muted-foreground">Людей отримали допомогу</div>
-              </div>
-            </div>
-            
-            <div className="absolute -top-6 -right-6 bg-white rounded-2xl p-4 shadow-card border border-border">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-primary">24/7</div>
-                <div className="text-sm text-muted-foreground">Підтримка</div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

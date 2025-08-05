@@ -128,7 +128,7 @@ const Blog = () => {
             </p>
             
             {/* Search Bar */}
-            <div className="max-w-md mx-auto relative">
+            <div className="max-w-md mx-auto relative mb-8">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
               <Input
                 type="text"
@@ -137,6 +137,43 @@ const Blog = () => {
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="pl-10 bg-white shadow-sm"
               />
+            </div>
+
+            {/* Filters */}
+            <div className="space-y-4 max-w-4xl mx-auto">
+              {/* Categories */}
+              <div className="flex items-center justify-center gap-2 flex-wrap">
+                <Tag className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+                <span className="text-sm font-medium text-muted-foreground whitespace-nowrap">Категорії:</span>
+                {categories.map((category) => (
+                  <Button
+                    key={category}
+                    variant={selectedCategory === category ? "default" : "outline"}
+                    size="sm"
+                    className="whitespace-nowrap"
+                    onClick={() => setSelectedCategory(category)}
+                  >
+                    {category}
+                  </Button>
+                ))}
+              </div>
+              
+              {/* Disease Filters */}
+              <div className="flex items-center justify-center gap-2 flex-wrap">
+                <Tag className="w-4 h-4 text-muted-foreground flex-shrink-0" />
+                <span className="text-sm font-medium text-muted-foreground whitespace-nowrap">Захворювання:</span>
+                {diseases.map((disease) => (
+                  <Button
+                    key={disease}
+                    variant={selectedDisease === disease ? "default" : "outline"}
+                    size="sm"
+                    className="whitespace-nowrap"
+                    onClick={() => setSelectedDisease(disease)}
+                  >
+                    {disease}
+                  </Button>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -210,44 +247,6 @@ const Blog = () => {
           </section>
         )}
 
-        {/* Filters */}
-        <section className="py-8 bg-white border-y border-border">
-          <div className="container mx-auto px-4 space-y-4">
-            {/* Categories */}
-            <div className="flex items-center gap-2 overflow-x-auto pb-2">
-              <Tag className="w-4 h-4 text-muted-foreground flex-shrink-0" />
-              <span className="text-sm font-medium text-muted-foreground whitespace-nowrap">Категорії:</span>
-              {categories.map((category) => (
-                <Button
-                  key={category}
-                  variant={selectedCategory === category ? "default" : "outline"}
-                  size="sm"
-                  className="whitespace-nowrap"
-                  onClick={() => setSelectedCategory(category)}
-                >
-                  {category}
-                </Button>
-              ))}
-            </div>
-            
-            {/* Disease Filters */}
-            <div className="flex items-center gap-2 overflow-x-auto pb-2">
-              <Tag className="w-4 h-4 text-muted-foreground flex-shrink-0" />
-              <span className="text-sm font-medium text-muted-foreground whitespace-nowrap">Захворювання:</span>
-              {diseases.map((disease) => (
-                <Button
-                  key={disease}
-                  variant={selectedDisease === disease ? "default" : "outline"}
-                  size="sm"
-                  className="whitespace-nowrap"
-                  onClick={() => setSelectedDisease(disease)}
-                >
-                  {disease}
-                </Button>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Articles Grid */}
         <section className="py-16 md:py-24">
