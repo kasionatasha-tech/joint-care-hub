@@ -17,7 +17,6 @@ const Index = () => {
         <JointProblemsOverview />
         <QuickLinks />
         <ConsultationForm />
-        <CTASection />
       </main>
       <Footer />
     </div>

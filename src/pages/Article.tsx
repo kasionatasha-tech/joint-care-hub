@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, User, Share2, BookOpen, ArrowLeft } from "lucide-react";
 import { useNavigate, useParams, Link } from "react-router-dom";
+import CTASection from "@/components/common/CTASection";
 
 const Article = () => {
   const navigate = useNavigate();
@@ -221,20 +222,7 @@ const Article = () => {
                 </Button>
               </div>
               
-              {/* CTA Buttons */}
-              <div className="bg-gradient-soft rounded-xl p-6">
-                <h4 className="text-lg font-semibold text-foreground mb-4 text-center">
-                  Готові розпочати свій шлях до здоров'я?
-                </h4>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button size="lg">
-                    Зареєструватись на офлайн зустріч
-                  </Button>
-                  <Button size="lg" variant="outline">
-                    Перейти до корисних матеріалів
-                  </Button>
-                </div>
-              </div>
+              <CTASection />
             </div>
           </div>
         </article>
