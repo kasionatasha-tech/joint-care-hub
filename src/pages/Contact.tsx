@@ -244,6 +244,28 @@ const Contact = () => {
                           Звичайно, ми поважаємо вашу приватність та конфіденційність.
                         </p>
                       </div>
+                      <div>
+                        <h5 className="font-medium text-foreground mb-1">
+                          Як проходять офлайн зустрічі?
+                        </h5>
+                        <p className="text-sm text-muted-foreground">
+                          Зустрічі проходять в комфортній атмосфері, де кожен може поділитися досвідом та отримати підтримку.
+                        </p>
+                      </div>
+                      <div>
+                        <h5 className="font-medium text-foreground mb-1">
+                          Чи потрібна попередня реєстрація на зустрічі?
+                        </h5>
+                        <p className="text-sm text-muted-foreground">
+                          Так, рекомендуємо зареєструватися заздалегідь для планування місця та матеріалів.
+                        </p>
+                      </div>
+                      
+                      <div className="pt-4">
+                        <button className="text-primary text-sm font-medium hover:underline">
+                          Показати всі запитання
+                        </button>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
@@ -252,24 +274,6 @@ const Contact = () => {
           </div>
         </section>
 
-        {/* Emergency Contact */}
-        <section className="py-16 md:py-24 bg-gradient-healing text-white">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Потрібна термінова допомога?
-            </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Якщо у вас гострий біль або невідкладна ситуація, 
-              зверніться до швидкої медичної допомоги за номером 103
-            </p>
-            <div className="flex justify-center">
-              <Button variant="secondary" size="lg">
-                <Phone className="w-4 h-4 mr-2" />
-                103
-              </Button>
-            </div>
-          </div>
-        </section>
       </main>
       
       <Footer />
