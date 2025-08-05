@@ -3,7 +3,7 @@ import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, User, Share2, BookOpen, ArrowLeft } from "lucide-react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 
 const Article = () => {
   const navigate = useNavigate();
@@ -210,15 +210,30 @@ const Article = () => {
 
             {/* Article Footer */}
             <div className="mt-16 pt-8 border-t border-border">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                <div className="flex items-center text-sm text-muted-foreground">
+              <div className="mb-8">
+                <div className="flex items-center text-sm text-muted-foreground mb-6">
                   <BookOpen className="w-4 h-4 mr-2" />
                   <span>Стаття була корисною? Поділіться з друзями</span>
                 </div>
-                <Button>
+                <Button className="mb-4">
                   <Share2 className="w-4 h-4 mr-2" />
                   Поділитися статтею
                 </Button>
+              </div>
+              
+              {/* CTA Buttons */}
+              <div className="bg-gradient-soft rounded-xl p-6">
+                <h4 className="text-lg font-semibold text-foreground mb-4 text-center">
+                  Готові зробити наступний крок?
+                </h4>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button size="lg">
+                    Зареєструватись на зустріч
+                  </Button>
+                  <Button size="lg" variant="outline">
+                    Перейти до корисної інформації
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
@@ -232,17 +247,17 @@ const Article = () => {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[1, 2].map((item) => (
-                <div key={item} className="bg-white rounded-lg shadow-card overflow-hidden">
+                <Link key={item} to={`/article/${item + 10}`} className="bg-white rounded-lg shadow-card overflow-hidden hover:shadow-gentle transition-all duration-300 group">
                   <img
                     src="/placeholder.svg"
                     alt="Related article"
-                    className="w-full h-48 object-cover"
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="p-6">
                     <Badge variant="secondary" className="mb-2">
                       Реабілітація
                     </Badge>
-                    <h4 className="text-lg font-semibold text-foreground mb-2">
+                    <h4 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
                       Фізіотерапія в домашніх умовах: ефективні методи
                     </h4>
                     <p className="text-muted-foreground text-sm mb-4">
@@ -255,7 +270,7 @@ const Article = () => {
                       <span>6 хв читання</span>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

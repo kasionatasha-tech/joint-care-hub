@@ -182,40 +182,28 @@ const Meetings = () => {
         {/* Past Meetings */}
         <section className="py-16 md:py-24 bg-secondary/30">
           <div className="container mx-auto px-4">
-            <div className="mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <div className="text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 Попередні зустрічі
               </h2>
-              <p className="text-lg text-muted-foreground">
-                Переглянути записи наших попередніх сесій можна в розділі "Живі знання"
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {pastMeetings.map((meeting, index) => (
-                <Card key={index} className="shadow-card border-0 bg-white">
-                  <CardContent className="p-6">
-                    <h3 className="text-lg font-semibold text-foreground mb-3">
-                      {meeting.title}
+              <div className="max-w-3xl mx-auto">
+                <Card className="shadow-card border-0 bg-white">
+                  <CardContent className="p-8">
+                    <Video className="w-16 h-16 text-primary mx-auto mb-6" />
+                    <h3 className="text-xl font-semibold text-foreground mb-4">
+                      Записи офлайн зустрічей у нашому блозі
                     </h3>
-                    <div className="space-y-2 mb-4">
-                      <div className="flex items-center text-sm">
-                        <Calendar className="w-4 h-4 text-primary mr-2" />
-                        <span className="text-muted-foreground">{meeting.date}</span>
-                      </div>
-                      <div className="flex items-center text-sm">
-                        <Clock className="w-4 h-4 text-primary mr-2" />
-                        <span className="text-muted-foreground">{meeting.duration}</span>
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-between mt-4">
-                      <Button variant="outline" size="sm">
-                        Переглянути запис
-                      </Button>
-                    </div>
+                    <p className="text-muted-foreground mb-6">
+                      Всі записи наших попередніх офлайн зустрічей, презентації та додаткові матеріали 
+                      ви можете знайти в розділі "Корисний блог". Там зібрана вся найцінніша інформація 
+                      від наших експертів у зручному форматі для вивчення.
+                    </p>
+                    <Button size="lg" className="w-full md:w-auto">
+                      Перейти до блогу
+                    </Button>
                   </CardContent>
                 </Card>
-              ))}
+              </div>
             </div>
           </div>
         </section>

@@ -262,13 +262,10 @@ const Contact = () => {
               Якщо у вас гострий біль або невідкладна ситуація, 
               зверніться до швидкої медичної допомоги за номером 103
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <Button variant="secondary" size="lg">
                 <Phone className="w-4 h-4 mr-2" />
-                Швидка допомога: 103
-              </Button>
-              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-gray-900">
-                Наша гаряча лінія: +380 (44) 123-45-67
+                103
               </Button>
             </div>
           </div>

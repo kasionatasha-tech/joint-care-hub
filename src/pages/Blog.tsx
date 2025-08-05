@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
-import { Calendar, Clock, User, ArrowRight, Tag, Search } from "lucide-react";
+import { Calendar, Clock, User, ArrowRight, Tag, Search, Video } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
@@ -108,8 +108,7 @@ const Blog = () => {
     return matchesSearch && matchesCategory && matchesDisease;
   });
 
-  const featuredArticle = filteredArticles.find(article => article.featured);
-  const regularArticles = filteredArticles.filter(article => !article.featured);
+  const regularArticles = filteredArticles;
 
   return (
     <div className="min-h-screen bg-background">
@@ -178,74 +177,6 @@ const Blog = () => {
           </div>
         </section>
 
-        {/* Featured Article */}
-        {featuredArticle && (
-          <section className="py-16 md:py-24">
-            <div className="container mx-auto px-4">
-              <div className="mb-8">
-                <h2 className="text-3xl font-bold text-foreground mb-2">
-                  Рекомендована стаття
-                </h2>
-                <p className="text-muted-foreground">
-                  Найпопулярніший матеріал цього тижня
-                </p>
-              </div>
-
-              <Card className="shadow-card border-0 bg-white overflow-hidden">
-                <div className="grid grid-cols-1 lg:grid-cols-2">
-                  <div className="relative h-64 lg:h-auto">
-                    <img
-                      src={featuredArticle.image}
-                      alt={featuredArticle.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <Badge className="absolute top-4 left-4 bg-primary text-white border-0">
-                      РЕКОМЕНДОВАНО
-                    </Badge>
-                  </div>
-                  
-                  <div className="p-8 lg:p-12 flex flex-col justify-center">
-                    <div className="mb-4">
-                      <Badge variant="outline" className="mb-3">
-                        {featuredArticle.category}
-                      </Badge>
-                      <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-                        {featuredArticle.title}
-                      </h3>
-                      <p className="text-muted-foreground mb-6">
-                        {featuredArticle.excerpt}
-                      </p>
-                    </div>
-
-                    <div className="flex items-center justify-between mb-6">
-                      <div className="flex items-center text-sm text-muted-foreground">
-                        <User className="w-4 h-4 mr-2" />
-                        {featuredArticle.author}
-                      </div>
-                      <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                        <div className="flex items-center">
-                          <Calendar className="w-4 h-4 mr-1" />
-                          {featuredArticle.date}
-                        </div>
-                        <div className="flex items-center">
-                          <Clock className="w-4 h-4 mr-1" />
-                          {featuredArticle.readTime}
-                        </div>
-                      </div>
-                    </div>
-
-                    <Link to={`/article/${featuredArticle.id}`}>
-                      <Button size="lg" className="w-full lg:w-auto">
-                        Читати повністю
-                        <ArrowRight className="w-4 h-4 ml-2" />
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
-              </Card>
-            </div>
-          </section>
-        )}
 
 
         {/* Articles Grid */}
@@ -269,12 +200,29 @@ const Blog = () => {
                       alt={article.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
-                    <Badge 
-                      variant="outline" 
-                      className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm border-0"
-                    >
-                      {article.category}
-                    </Badge>
+                    <div className="absolute top-4 left-4 space-y-2">
+                      <Badge 
+                        variant="outline" 
+                        className="bg-white/90 backdrop-blur-sm border-0 block"
+                      >
+                        {article.category}
+                      </Badge>
+                      <Badge 
+                        variant="secondary" 
+                        className="bg-primary/90 text-white border-0 block"
+                      >
+                        {article.disease}
+                      </Badge>
+                      {article.id === 1 && (
+                        <Badge 
+                          variant="secondary" 
+                          className="bg-red-500/90 text-white border-0 flex items-center"
+                        >
+                          <Video className="w-3 h-3 mr-1" />
+                          Відео
+                        </Badge>
+                      )}
+                    </div>
                   </div>
 
                   <CardHeader className="pb-3">

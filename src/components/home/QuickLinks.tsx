@@ -13,13 +13,6 @@ const QuickLinks = () => {
       color: "bg-gradient-to-br from-green-500 to-blue-500"
     },
     {
-      icon: Video,
-      title: "Відеозаписи",
-      description: "Перегляньте записи попередніх зустрічей та корисні відео про здоров'я суглобів",
-      link: "/videos",
-      color: "bg-gradient-to-br from-blue-500 to-purple-500"
-    },
-    {
       icon: BookOpen,
       title: "Корисний блог",
       description: "Читайте статті про профілактику, лікування та поради від медичних фахівців",
@@ -49,7 +42,7 @@ const QuickLinks = () => {
         </div>
 
         {/* Quick Links Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {sections.map((section, index) => {
             const IconComponent = section.icon;
             return (
@@ -92,10 +85,10 @@ const QuickLinks = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary">
-                Записатись на консультацію
+                Зареєструватись на офлайн зустріч
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900">
-                Переглянути наступну зустріч
+                Перейти до корисних матеріалів
               </Button>
             </div>
           </div>
