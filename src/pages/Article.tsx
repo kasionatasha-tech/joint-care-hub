@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, User, Share2, BookOpen, ArrowLeft } from "lucide-react";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import CTASection from "@/components/common/CTASection";
+import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 
 const Article = () => {
   const navigate = useNavigate();
@@ -75,6 +76,29 @@ const Article = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
+      
+      {/* Breadcrumbs */}
+      <div className="container mx-auto px-4 py-4">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link to="/">Головна</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link to="/blog">Блог</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>{article.title}</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+      </div>
       
       <main>
         {/* Article Header */}

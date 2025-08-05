@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Calendar, Clock, User, ArrowRight, Tag, Search, Video } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -113,6 +114,23 @@ const Blog = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
+      
+      {/* Breadcrumbs */}
+      <div className="container mx-auto px-4 py-4">
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link to="/">Головна</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>Блог</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+      </div>
       
       <main>
         {/* Hero Section */}
