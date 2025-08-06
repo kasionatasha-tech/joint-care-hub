@@ -23,7 +23,7 @@ const Blog = () => {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const { data, error } = await supabase.rpc('get_blog_posts') as { data: any[] | null, error: any };
+        const { data, error } = await supabase.rpc('get_blog_posts');
 
         if (error) {
           throw error;
