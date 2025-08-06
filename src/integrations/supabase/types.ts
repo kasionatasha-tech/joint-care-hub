@@ -67,7 +67,16 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_blog_posts: {
+        Args: Record<PropertyKey, never>
+        Returns: {
+          content: string | null
+          created_at: string | null
+          id: string
+          image_url: string | null
+          title: string | null
+        }[]
+      }
     }
     Enums: {
       [_ in never]: never
