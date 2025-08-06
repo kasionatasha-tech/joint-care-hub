@@ -6,94 +6,80 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Calendar, Clock, User, ArrowRight, Tag, Search, Video } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("Всі");
   const [selectedDisease, setSelectedDisease] = useState("Всі захворювання");
+  const [articles, setArticles] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+  const { toast } = useToast();
 
-  const articles = [
-    {
-      id: 1,
-      title: "10 простих вправ для здоров'я колін",
-      excerpt: "Дізнайтесь про найефективніші вправи, які допоможуть зміцнити коліна та зменшити біль",
-      content: "Здоров'я колін є критично важливим для підтримання активного способу життя...",
-      author: "Др. Олександр Іваненко",
-      date: "20 лютого 2024",
-      readTime: "5 хв",
-      category: "Вправи",
-      disease: "Артроз колін",
-      featured: true,
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=300&fit=crop"
-    },
-    {
-      id: 2,
-      title: "Харчування при артриті: що їсти, а чого уникати",
-      excerpt: "Комплексний гід по продуктах, які допомагають боротися з запаленням суглобів",
-      content: "Правильне харчування може значно впливати на симптоми артриту...",
-      author: "Нутриціолог Олена Коваль",
-      date: "18 лютого 2024",
-      readTime: "8 хв",
-      category: "Харчування",
-      disease: "Ревматоїдний артрит",
-      featured: false,
-      image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&h=300&fit=crop"
-    },
-    {
-      id: 3,
-      title: "Як розпізнати ранні ознаки артрозу",
-      excerpt: "Важливі симптоми, на які варто звернути увагу для раннього виявлення проблем",
-      content: "Раннє виявлення артрозу може значно покращити прогноз лікування...",
-      author: "Др. Марія Петренко",
-      date: "15 лютого 2024",
-      readTime: "6 хв",
-      category: "Діагностика",
-      disease: "Остеоартроз",
-      featured: false,
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=300&fit=crop"
-    },
-    {
-      id: 4,
-      title: "Фізіотерапія вдома: основні принципи",
-      excerpt: "Як правильно організувати фізіотерапевтичні процедури в домашніх умовах",
-      content: "Домашня фізіотерапія може бути ефективним доповненням до основного лікування...",
-      author: "Анна Коваленко",
-      date: "12 лютого 2024",
-      readTime: "7 хв",
-      category: "Фізіотерапія",
-      disease: "Спондилоартрит",
-      featured: false,
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=300&fit=crop"
-    },
-    {
-      id: 5,
-      title: "Профілактика травм під час занять спортом",
-      excerpt: "Поради щодо безпечних тренувань та захисту суглобів від травм",
-      content: "Правильна підготовка до тренувань може запобігти серйозним травмам...",
-      author: "Спортивний лікар Ігор Мельник",
-      date: "10 лютого 2024",
-      readTime: "5 хв",
-      category: "Профілактика",
-      disease: "Артроз колін",
-      featured: false,
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=300&fit=crop"
-    },
-    {
-      id: 6,
-      title: "Психологічний аспект хронічного болю",
-      excerpt: "Як справлятися з емоційними викликами при хронічних проблемах суглобів",
-      content: "Хронічний біль впливає не лише на фізичне, але й на психічне здоров'я...",
-      author: "Психолог Людмила Сергієнко",
-      date: "8 лютого 2024",
-      readTime: "10 хв",
-      category: "Психологія",
-      disease: "Фіброміалгія",
-      featured: false,
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=300&fit=crop"
-    }
-  ];
+  // Fetch articles from Supabase
+  useEffect(() => {
+    const fetchArticles = async () => {
+      try {
+        const { data, error } = await supabase.rpc('get_blog_posts') as { data: any[] | null, error: any };
+
+        if (error) {
+          throw error;
+        }
+
+        // Transform Supabase data to match component format
+        const transformedArticles = data?.map((post: any, index: number) => ({
+          id: post.id,
+          title: post.title || "Без назви",
+          excerpt: post.content?.substring(0, 200) + "..." || "Опис недоступний",
+          content: post.content || "",
+          author: "Наш експерт",
+          date: new Date(post.created_at).toLocaleDateString('uk-UA', {
+            day: 'numeric',
+            month: 'long',
+            year: 'numeric'
+          }),
+          readTime: Math.ceil((post.content?.length || 0) / 1000) + " хв",
+          category: "Здоров'я",
+          disease: "Загальне",
+          featured: index === 0,
+          image: post.image_url || "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=300&fit=crop"
+        })) || [];
+
+        setArticles(transformedArticles);
+      } catch (error) {
+        console.error('Error fetching articles:', error);
+        toast({
+          title: "Помилка завантаження",
+          description: "Не вдалося завантажити статті. Спробуйте пізніше.",
+          variant: "destructive",
+        });
+        
+        // Fallback to default articles if Supabase fails
+        setArticles([
+          {
+            id: 1,
+            title: "Приклад статті",
+            excerpt: "Це приклад статті з бази даних...",
+            content: "Повний текст статті тут",
+            author: "Наш експерт",
+            date: new Date().toLocaleDateString('uk-UA'),
+            readTime: "5 хв",
+            category: "Здоров'я",
+            disease: "Загальне",
+            featured: true,
+            image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=300&fit=crop"
+          }
+        ]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchArticles();
+  }, [toast]);
 
   const categories = ["Всі", "Вправи", "Харчування", "Діагностика", "Фізіотерапія", "Профілактика", "Психологія"];
   const diseases = ["Всі захворювання", "Артроз колін", "Ревматоїдний артрит", "Остеоартроз", "Спондилоартрит", "Фіброміалгія"];
@@ -110,6 +96,19 @@ const Blog = () => {
   });
 
   const regularArticles = filteredArticles;
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-background">
+        <Header />
+        <div className="container mx-auto px-4 py-16 text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
+          <p className="mt-4 text-muted-foreground">Завантаження статей...</p>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background">
