@@ -70,11 +70,16 @@ export type Database = {
       get_blog_posts: {
         Args: Record<PropertyKey, never>
         Returns: {
-          content: string | null
-          created_at: string | null
           id: string
-          image_url: string | null
-          title: string | null
+          title: string
+          content: string
+          image_url: string
+          created_at: string
+          excerpt: string
+          author: string
+          read_time: string
+          category: string
+          disease: string
         }[]
       }
     }
