@@ -9,7 +9,7 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-    "migrate:contentful": "node scripts/contentful-migrate.js"
+    "migrate:contentful": "node scripts/contentful-migrate.cjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
