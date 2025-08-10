@@ -1,3 +1,4 @@
+// scripts/contentful-migrate.cjs
 const contentful = require('contentful-management');
 const fs = require('fs');
 const path = require('path');
@@ -20,12 +21,15 @@ function toRichText(text) {
 
 async function ensureContentType(env) {
   const id = 'page';
-  try { return await env.getContentType(id); }
-  catch (_) {
+  try {
+    // If it exists, just use it
+    return await env.getContentType(id);
+  } catch {
+    // If you create it from scratch, match your current model:
     const ct = await env.createContentTypeWithId(id, {
       name: 'Page',
       fields: [
-        { id: 'title', name: 'Title', type: 'Symbol', required: true },
+        { id: 'title', name: 'Title', type: 'RichText', required: true },
         { id: 'slug', name: 'Slug', type: 'Symbol', required: true, validations: [{ unique: true }] },
         { id: 'body', name: 'Body', type: 'RichText' },
         { id: 'heroImage', name: 'Hero Image', type: 'Link', linkType: 'Asset' }
@@ -40,7 +44,8 @@ async function upsertAsset(env, url, title) {
   const fileName = url.split('/').pop() || 'image.jpg';
   const asset = await env.createAsset({
     fields: {
-      title: { 'en-US': toRichText(page.title) },
+      // Asset title must be a string (Symbol), not RichText
+      title: { 'en-US': title || fileName },
       file: { 'en-US': { contentType: 'image/jpeg', fileName, upload: url } }
     }
   });
@@ -48,26 +53,18 @@ async function upsertAsset(env, url, title) {
   return await processed.publish();
 }
 
-function toRichText(text) {
-  return {
-    nodeType: 'document',
-    data: {},
-    content: [{
-      nodeType: 'paragraph',
-      data: {},
-      content: [{ nodeType: 'text', value: text, marks: [], data: {} }]
-    }]
-  };
-}
-
 async function upsertEntry(env, page) {
   const hero = await upsertAsset(env, page.heroImageUrl, `${page.title} hero`);
+
+  // IMPORTANT: title is RichText in your model
   const fields = {
-    title: { 'en-US': page.title },
-    slug: { 'en-US': page.slug },
-    body: { 'en-US': toRichText(page.body || '') }
+    title: { 'en-US': toRichText(page.title) },
+    slug:  { 'en-US': page.slug },
+    body:  { 'en-US': toRichText(page.body || '') }
   };
-  if (hero) fields.heroImage = { 'en-US': { sys: { type: 'Link', linkType: 'Asset', id: hero.sys.id } } };
+  if (hero) {
+    fields.heroImage = { 'en-US': { sys: { type: 'Link', linkType: 'Asset', id: hero.sys.id } } };
+  }
 
   const existing = await env.getEntries({ content_type: 'page', 'fields.slug': page.slug, limit: 1 });
   if (existing.items.length) {
@@ -86,6 +83,7 @@ async function run() {
   const client = contentful.createClient({ accessToken: TOKEN });
   const space = await client.getSpace(SPACE_ID);
   const env = await space.getEnvironment(ENV_ID);
+
   await ensureContentType(env);
 
   const dataPath = path.join(process.cwd(), 'scripts', 'data', 'pages.json');
