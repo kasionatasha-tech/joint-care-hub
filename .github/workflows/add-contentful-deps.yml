@@ -1,0 +1,21 @@
+name: Add Contentful deps
+on:
+  workflow_dispatch: {}
+jobs:
+  add:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install @contentful/rich-text-react-renderer @contentful/rich-text-types contentful --save
+      - name: Commit lockfile and package.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add package.json package-lock.json
+          git commit -m "chore: add Contentful runtime deps"
+          git push
