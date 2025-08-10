@@ -6,6 +6,18 @@ const SPACE_ID = process.env.CONTENTFUL_SPACE_ID;
 const ENV_ID = process.env.CONTENTFUL_ENVIRONMENT || 'master';
 const TOKEN = process.env.CONTENTFUL_MANAGEMENT_TOKEN;
 
+function toRichText(text) {
+  return {
+    nodeType: 'document',
+    data: {},
+    content: [{
+      nodeType: 'paragraph',
+      data: {},
+      content: [{ nodeType: 'text', value: text || '', marks: [], data: {} }]
+    }]
+  };
+}
+
 async function ensureContentType(env) {
   const id = 'page';
   try { return await env.getContentType(id); }
@@ -28,7 +40,7 @@ async function upsertAsset(env, url, title) {
   const fileName = url.split('/').pop() || 'image.jpg';
   const asset = await env.createAsset({
     fields: {
-      title: { 'en-US': title || fileName },
+      title: { 'en-US': toRichText(page.title) },
       file: { 'en-US': { contentType: 'image/jpeg', fileName, upload: url } }
     }
   });
