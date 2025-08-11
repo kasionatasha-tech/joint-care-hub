@@ -55,6 +55,9 @@ const Meetings = () => {
                 та підтримуємо реабілітацію для активного життя. На основі наших зустрічей ми також
                 створюємо освітні ресурси для всієї спільноти.
               </p>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-6">
+                <strong>Офлайн формат.</strong> Зустрічаємося особисто. Адреса та деталі надсилаються після реєстрації.
+              </p>
             </div>
           </div>
         </section>
@@ -134,21 +137,6 @@ const Meetings = () => {
                 </Card>
               </div>
 
-              {/* Location Info */}
-              <div className="space-y-6">
-
-                <Card className="shadow-card border-0 bg-gradient-soft">
-                  <CardContent className="p-6">
-                    <div className="text-center">
-                      <MapPin className="w-8 h-8 text-primary mx-auto mb-3" />
-                      <h4 className="font-semibold text-foreground mb-2">Офлайн формат</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Зустрічаємося особисто. Адреса та деталі надсилаються після реєстрації.
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
             </div>
           </div>
         </section>
