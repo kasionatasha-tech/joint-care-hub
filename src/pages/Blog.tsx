@@ -127,15 +127,6 @@ const Blog = () => {
       </div>
       
       <main>
-        {/* Hero Section */}
-        <section className="py-16 md:py-24 bg-gradient-soft">
-          <div className="container mx-auto px-4 text-center">
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Дізнавайтесь найсвіжішу інформацію про здоров'я суглобів, 
-              профілактику захворювань та ефективні методи лікування від наших експертів.
-            </p>
-          </div>
-        </section>
 
 
 
