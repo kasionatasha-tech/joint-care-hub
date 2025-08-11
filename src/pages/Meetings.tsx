@@ -43,34 +43,19 @@ const Meetings = () => {
       <Header />
       
       <main>
-        {/* Hero Section */}
-        <section className="py-16 md:py-24 bg-gradient-soft">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-                Офлайн зустрічі
-              </h1>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Приєднуйтесь до наших регулярних офлайн-сесій, де ділимося доступною інформацією
-                та підтримуємо реабілітацію для активного життя. На основі наших зустрічей ми також
-                створюємо освітні ресурси для всієї спільноти.
-              </p>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-6">
-                <strong>Офлайн формат.</strong> Зустрічаємося особисто. Адреса та деталі надсилаються після реєстрації.
-              </p>
-            </div>
-          </div>
-        </section>
 
         {/* Upcoming Meeting */}
-        <section className="py-16 md:py-24">
+        <section className="py-8">
           <div className="container mx-auto px-4">
             <div className="mb-12 text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Найближча зустріч
+                Найближча зустріч Офлайн зустрічі
               </h2>
-              <p className="text-lg text-muted-foreground">
-                Не пропустіть можливість дізнатися щось нове про здоров'я ваших суглобів
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-4">
+                Приєднуйтесь до наших регулярних офлайн-сесій, де ділимося доступною інформацією та підтримуємо реабілітацію для активного життя. На основі наших зустрічей ми також створюємо освітні ресурси для всієї спільноти.
+              </p>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                <strong>Офлайн формат.</strong> Зустрічаємося особисто. Адреса та деталі надсилаються після реєстрації.
               </p>
             </div>
 
