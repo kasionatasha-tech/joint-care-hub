@@ -173,6 +173,61 @@ const Blog = () => {
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+              {/* Left Sidebar with Filters */}
+              <div className="lg:col-span-1">
+                <div className="sticky top-8 space-y-6">
+                  {/* Categories Filter */}
+                  <Card className="shadow-card border-0 bg-white">
+                    <CardHeader className="pb-4">
+                      <CardTitle className="text-lg flex items-center">
+                        <Tag className="w-4 h-4 mr-2 text-primary" />
+                        Категорії
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <div className="space-y-2">
+                        {categories.map((category) => (
+                          <Button
+                            key={category}
+                            variant={selectedCategory === category ? "default" : "ghost"}
+                            size="sm"
+                            className="w-full justify-start text-left"
+                            onClick={() => setSelectedCategory(category)}
+                          >
+                            {category}
+                          </Button>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Diseases Filter */}
+                  <Card className="shadow-card border-0 bg-white">
+                    <CardHeader className="pb-4">
+                      <CardTitle className="text-lg flex items-center">
+                        <Tag className="w-4 h-4 mr-2 text-primary" />
+                        Захворювання
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <div className="space-y-2">
+                        {diseases.map((disease) => (
+                          <Button
+                            key={disease}
+                            variant={selectedDisease === disease ? "default" : "ghost"}
+                            size="sm"
+                            className="w-full justify-start text-left"
+                            onClick={() => setSelectedDisease(disease)}
+                          >
+                            {disease}
+                          </Button>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+
               {/* Articles Grid - Takes 3/4 of the width */}
               <div className="lg:col-span-3">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -253,61 +308,6 @@ const Blog = () => {
                   <Button variant="outline" size="lg">
                     Завантажити більше статей
                   </Button>
-                </div>
-              </div>
-
-              {/* Right Sidebar with Filters */}
-              <div className="lg:col-span-1">
-                <div className="sticky top-8 space-y-6">
-                  {/* Categories Filter */}
-                  <Card className="shadow-card border-0 bg-white">
-                    <CardHeader className="pb-4">
-                      <CardTitle className="text-lg flex items-center">
-                        <Tag className="w-4 h-4 mr-2 text-primary" />
-                        Категорії
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="pt-0">
-                      <div className="space-y-2">
-                        {categories.map((category) => (
-                          <Button
-                            key={category}
-                            variant={selectedCategory === category ? "default" : "ghost"}
-                            size="sm"
-                            className="w-full justify-start text-left"
-                            onClick={() => setSelectedCategory(category)}
-                          >
-                            {category}
-                          </Button>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-
-                  {/* Diseases Filter */}
-                  <Card className="shadow-card border-0 bg-white">
-                    <CardHeader className="pb-4">
-                      <CardTitle className="text-lg flex items-center">
-                        <Tag className="w-4 h-4 mr-2 text-primary" />
-                        Захворювання
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent className="pt-0">
-                      <div className="space-y-2">
-                        {diseases.map((disease) => (
-                          <Button
-                            key={disease}
-                            variant={selectedDisease === disease ? "default" : "ghost"}
-                            size="sm"
-                            className="w-full justify-start text-left"
-                            onClick={() => setSelectedDisease(disease)}
-                          >
-                            {disease}
-                          </Button>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
                 </div>
               </div>
             </div>
