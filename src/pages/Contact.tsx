@@ -232,62 +232,85 @@ const Contact = () => {
                   })}
                 </div>
 
-                {/* FAQ Section */}
-                <Card className="shadow-card border-0 bg-gradient-soft">
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-16 md:py-24 bg-gradient-soft">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold text-foreground mb-4">
+                  Часті запитання
+                </h2>
+                <p className="text-muted-foreground">
+                  Знайдіть відповіді на найпоширеніші питання про нашу організацію та послуги
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <Card className="shadow-card border-0 bg-white">
                   <CardContent className="p-6">
-                    <h3 className="text-xl font-semibold text-foreground mb-4">
-                      Часті запитання
-                    </h3>
-                    <div className="space-y-4">
-                      <div>
-                        <h5 className="font-medium text-foreground mb-1">
-                          Як швидко ви відповідаєте на повідомлення?
-                        </h5>
-                        <p className="text-sm text-muted-foreground">
-                          Зазвичай ми відповідаємо протягом 24 годин у робочі дні.
-                        </p>
-                      </div>
-                      <div>
-                        <h5 className="font-medium text-foreground mb-1">
-                          Чи безкоштовні ваші консультації?
-                        </h5>
-                        <p className="text-sm text-muted-foreground">
-                          Так, усі базові консультації та участь у зустрічах безкоштовні.
-                        </p>
-                      </div>
-                      <div>
-                        <h5 className="font-medium text-foreground mb-1">
-                          Чи можу я залишитися анонімним?
-                        </h5>
-                        <p className="text-sm text-muted-foreground">
-                          Звичайно, ми поважаємо вашу приватність та конфіденційність.
-                        </p>
-                      </div>
-                      <div>
-                        <h5 className="font-medium text-foreground mb-1">
-                          Як проходять офлайн зустрічі?
-                        </h5>
-                        <p className="text-sm text-muted-foreground">
-                          Зустрічі проходять в комфортній атмосфері, де кожен може поділитися досвідом та отримати підтримку.
-                        </p>
-                      </div>
-                      <div>
-                        <h5 className="font-medium text-foreground mb-1">
-                          Чи потрібна попередня реєстрація на зустрічі?
-                        </h5>
-                        <p className="text-sm text-muted-foreground">
-                          Так, рекомендуємо зареєструватися заздалегідь для планування місця та матеріалів.
-                        </p>
-                      </div>
-                      
-                      <div className="pt-4">
-                        <button className="text-primary text-sm font-medium hover:underline">
-                          Показати всі запитання
-                        </button>
-                      </div>
-                    </div>
+                    <h5 className="font-medium text-foreground mb-2">
+                      Як швидко ви відповідаєте на повідомлення?
+                    </h5>
+                    <p className="text-sm text-muted-foreground">
+                      Зазвичай ми відповідаємо протягом 24 годин у робочі дні.
+                    </p>
                   </CardContent>
                 </Card>
+                
+                <Card className="shadow-card border-0 bg-white">
+                  <CardContent className="p-6">
+                    <h5 className="font-medium text-foreground mb-2">
+                      Чи безкоштовні ваші консультації?
+                    </h5>
+                    <p className="text-sm text-muted-foreground">
+                      Так, усі базові консультації та участь у зустрічах безкоштовні.
+                    </p>
+                  </CardContent>
+                </Card>
+                
+                <Card className="shadow-card border-0 bg-white">
+                  <CardContent className="p-6">
+                    <h5 className="font-medium text-foreground mb-2">
+                      Чи можу я залишитися анонімним?
+                    </h5>
+                    <p className="text-sm text-muted-foreground">
+                      Звичайно, ми поважаємо вашу приватність та конфіденційність.
+                    </p>
+                  </CardContent>
+                </Card>
+                
+                <Card className="shadow-card border-0 bg-white">
+                  <CardContent className="p-6">
+                    <h5 className="font-medium text-foreground mb-2">
+                      Як проходять офлайн зустрічі?
+                    </h5>
+                    <p className="text-sm text-muted-foreground">
+                      Зустрічі проходять в комфортній атмосфері, де кожен може поділитися досвідом та отримати підтримку.
+                    </p>
+                  </CardContent>
+                </Card>
+                
+                <Card className="shadow-card border-0 bg-white md:col-span-2">
+                  <CardContent className="p-6">
+                    <h5 className="font-medium text-foreground mb-2">
+                      Чи потрібна попередня реєстрація на зустрічі?
+                    </h5>
+                    <p className="text-sm text-muted-foreground">
+                      Так, рекомендуємо зареєструватися заздалегідь для планування місця та матеріалів.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+              
+              <div className="text-center mt-8">
+                <Button variant="outline">
+                  Показати всі запитання
+                </Button>
               </div>
             </div>
           </div>
