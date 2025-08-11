@@ -3,8 +3,7 @@ import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Calendar, Clock, User, ArrowRight, Tag, Search, Video } from "lucide-react";
+import { Calendar, Clock, User, ArrowRight, Tag, Video } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
@@ -12,7 +11,6 @@ import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 
 const Blog = () => {
-  const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("Всі");
   const [selectedDisease, setSelectedDisease] = useState("Всі захворювання");
   const [articles, setArticles] = useState<any[]>([]);
@@ -84,15 +82,12 @@ const Blog = () => {
   const categories = ["Всі", "Вправи", "Харчування", "Діагностика", "Фізіотерапія", "Профілактика", "Психологія"];
   const diseases = ["Всі захворювання", "Артроз колін", "Ревматоїдний артрит", "Остеоартроз", "Спондилоартрит", "Фіброміалгія"];
 
-  // Filter articles based on search term, category, and disease
+  // Filter articles based on category and disease
   const filteredArticles = articles.filter(article => {
-    const matchesSearch = article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         article.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         article.author.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory = selectedCategory === "Всі" || article.category === selectedCategory;
     const matchesDisease = selectedDisease === "Всі захворювання" || article.disease === selectedDisease;
     
-    return matchesSearch && matchesCategory && matchesDisease;
+    return matchesCategory && matchesDisease;
   });
 
   const regularArticles = filteredArticles;
@@ -135,26 +130,10 @@ const Blog = () => {
         {/* Hero Section */}
         <section className="py-16 md:py-24 bg-gradient-soft">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Корисний блог
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Дізнавайтесь найсвіжішу інформацію про здоров'я суглобів, 
               профілактику захворювань та ефективні методи лікування від наших експертів.
             </p>
-            
-            {/* Search Bar */}
-            <div className="max-w-md mx-auto relative mb-8">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-              <Input
-                type="text"
-                placeholder="Пошук статей..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10 bg-white shadow-sm"
-              />
-            </div>
-
           </div>
         </section>
 
@@ -163,14 +142,6 @@ const Blog = () => {
         {/* Articles Grid with Right Sidebar */}
         <section className="py-16 md:py-24">
           <div className="container mx-auto px-4">
-            <div className="mb-8">
-              <h2 className="text-3xl font-bold text-foreground mb-2">
-                Останні статті
-              </h2>
-              <p className="text-muted-foreground">
-                Свіжі матеріали від наших експертів
-              </p>
-            </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
               {/* Left Sidebar with Filters */}
@@ -314,28 +285,6 @@ const Blog = () => {
           </div>
         </section>
 
-        {/* Newsletter Subscription */}
-        <section className="py-16 md:py-24 bg-gradient-healing text-white">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Не пропускайте корисні матеріали
-            </h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Підпишіться на нашу розсилку і отримуйте найсвіжіші статті 
-              про здоров'я суглобів прямо на свою електронну пошту
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Ваш email"
-                className="flex-1 px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/50"
-              />
-              <Button variant="secondary" size="lg">
-                Підписатись
-              </Button>
-            </div>
-          </div>
-        </section>
       </main>
       
       <Footer />
