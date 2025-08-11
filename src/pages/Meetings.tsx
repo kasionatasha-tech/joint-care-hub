@@ -74,9 +74,9 @@ const Meetings = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="max-w-4xl mx-auto">
               {/* Main Meeting Info */}
-              <div className="lg:col-span-2">
+              <div>
                 <Card className="shadow-card border-0 bg-white">
                   <CardHeader className="bg-gradient-healing text-white rounded-t-lg">
                     <div className="flex items-center justify-between">
@@ -144,28 +144,21 @@ const Meetings = () => {
         {/* Past Meetings */}
         <section className="py-16 md:py-24 bg-secondary/30">
           <div className="container mx-auto px-4">
-            <div className="text-center">
+            <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
                 Попередні зустрічі
               </h2>
-              <div className="max-w-3xl mx-auto">
-                <Card className="shadow-card border-0 bg-white">
-                  <CardContent className="p-8">
-                    <Video className="w-16 h-16 text-primary mx-auto mb-6" />
-                    <h3 className="text-xl font-semibold text-foreground mb-4">
-                      Записи офлайн зустрічей у нашому блозі
-                    </h3>
-                    <p className="text-muted-foreground mb-6">
-                      Всі записи наших попередніх офлайн зустрічей, презентації та додаткові матеріали 
-                      ви можете знайти в розділі "Корисний блог". Там зібрана вся найцінніша інформація 
-                      від наших експертів у зручному форматі для вивчення.
-                    </p>
-                    <Button size="lg" className="w-full md:w-auto">
-                      Перейти до блогу
-                    </Button>
-                  </CardContent>
-                </Card>
-              </div>
+              <h3 className="text-xl font-semibold text-foreground mb-4">
+                Записи офлайн зустрічей у нашому блозі
+              </h3>
+              <p className="text-muted-foreground mb-6">
+                Всі записи наших попередніх офлайн зустрічей, презентації та додаткові матеріали 
+                ви можете знайти в розділі "Корисний блог". Там зібрана вся найцінніша інформація 
+                від наших експертів у зручному форматі для вивчення.
+              </p>
+              <Button size="lg" className="w-full md:w-auto">
+                Перейти до блогу
+              </Button>
             </div>
           </div>
         </section>
