@@ -51,8 +51,9 @@ const Meetings = () => {
                 Офлайн зустрічі
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Приєднуйтесь до наших регулярних офлайн-сесій, де ділимося доступною інформацією, 
-                створюємо освітні ресурси та підтримуємо реабілітацію для активного життя.
+                Приєднуйтесь до наших регулярних офлайн-сесій, де ділимося доступною інформацією
+                та підтримуємо реабілітацію для активного життя. На основі наших зустрічей ми також
+                створюємо освітні ресурси для всієї спільноти.
               </p>
             </div>
           </div>
@@ -133,35 +134,8 @@ const Meetings = () => {
                 </Card>
               </div>
 
-              {/* Registration Benefits */}
+              {/* Location Info */}
               <div className="space-y-6">
-                <Card className="shadow-card border-0 bg-white">
-                  <CardHeader>
-                    <CardTitle className="text-lg">Що ви отримаєте</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div className="flex items-start">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                      <span className="text-sm text-muted-foreground">Експертні поради від лікарів</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                      <span className="text-sm text-muted-foreground">Практичні вправи та демонстрації</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                      <span className="text-sm text-muted-foreground">Можливість поставити запитання</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                      <span className="text-sm text-muted-foreground">Запис зустрічі для перегляду</span>
-                    </div>
-                    <div className="flex items-start">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                      <span className="text-sm text-muted-foreground">Додаткові матеріали</span>
-                    </div>
-                  </CardContent>
-                </Card>
 
                 <Card className="shadow-card border-0 bg-gradient-soft">
                   <CardContent className="p-6">
