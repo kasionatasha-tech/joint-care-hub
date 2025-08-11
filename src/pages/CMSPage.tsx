@@ -17,18 +17,23 @@ type PageFields = {
   heroImage?: any;
 };
 
+type PageEntryType = {
+  contentTypeId: 'page';
+  fields: PageFields;
+};
+
 export default function CMSPage({ slug: forcedSlug }: { slug?: string }) {
   const params = useParams();
   const slug = forcedSlug ?? params.slug ?? "home";
 
-  const [entry, setEntry] = useState<{ fields: PageFields } | null>(null);
+  const [entry, setEntry] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     let mounted = true;
     (async () => {
       try {
-        const res = await client.getEntries<{ fields: PageFields }>({
+        const res = await client.getEntries({
           content_type: "page",
           "fields.slug": slug,
           limit: 1,
