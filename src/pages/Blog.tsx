@@ -131,7 +131,7 @@ const Blog = () => {
 
 
         {/* Articles Grid with Right Sidebar */}
-        <section className="py-16 md:py-24">
+        <section className="py-8">
           <div className="container mx-auto px-4">
 
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
