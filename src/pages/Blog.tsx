@@ -155,48 +155,12 @@ const Blog = () => {
               />
             </div>
 
-            {/* Filters */}
-            <div className="space-y-4 max-w-4xl mx-auto">
-              {/* Categories */}
-              <div className="flex items-center justify-center gap-2 flex-wrap">
-                <Tag className="w-4 h-4 text-muted-foreground flex-shrink-0" />
-                <span className="text-sm font-medium text-muted-foreground whitespace-nowrap">Категорії:</span>
-                {categories.map((category) => (
-                  <Button
-                    key={category}
-                    variant={selectedCategory === category ? "default" : "outline"}
-                    size="sm"
-                    className="whitespace-nowrap"
-                    onClick={() => setSelectedCategory(category)}
-                  >
-                    {category}
-                  </Button>
-                ))}
-              </div>
-              
-              {/* Disease Filters */}
-              <div className="flex items-center justify-center gap-2 flex-wrap">
-                <Tag className="w-4 h-4 text-muted-foreground flex-shrink-0" />
-                <span className="text-sm font-medium text-muted-foreground whitespace-nowrap">Захворювання:</span>
-                {diseases.map((disease) => (
-                  <Button
-                    key={disease}
-                    variant={selectedDisease === disease ? "default" : "outline"}
-                    size="sm"
-                    className="whitespace-nowrap"
-                    onClick={() => setSelectedDisease(disease)}
-                  >
-                    {disease}
-                  </Button>
-                ))}
-              </div>
-            </div>
           </div>
         </section>
 
 
 
-        {/* Articles Grid */}
+        {/* Articles Grid with Right Sidebar */}
         <section className="py-16 md:py-24">
           <div className="container mx-auto px-4">
             <div className="mb-8">
@@ -208,84 +172,144 @@ const Blog = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {regularArticles.map((article) => (
-                <Card key={article.id} className="group shadow-card border-0 bg-white overflow-hidden hover:shadow-gentle transition-all duration-300">
-                  <div className="relative h-48 overflow-hidden">
-                    <img
-                      src={article.image}
-                      alt={article.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute top-4 left-4 space-y-2">
-                      <Badge 
-                        variant="outline" 
-                        className="bg-white/90 backdrop-blur-sm border-0 block"
-                      >
-                        {article.category}
-                      </Badge>
-                      <Badge 
-                        variant="secondary" 
-                        className="bg-primary/90 text-white border-0 block"
-                      >
-                        {article.disease}
-                      </Badge>
-                      {article.id === 1 && (
-                        <Badge 
-                          variant="secondary" 
-                          className="bg-red-500/90 text-white border-0 flex items-center"
-                        >
-                          <Video className="w-3 h-3 mr-1" />
-                          Відео
-                        </Badge>
-                      )}
-                    </div>
-                  </div>
-
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg group-hover:text-primary transition-colors duration-300 line-clamp-2">
-                      {article.title}
-                    </CardTitle>
-                  </CardHeader>
-
-                  <CardContent className="pt-0">
-                    <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
-                      {article.excerpt}
-                    </p>
-
-                    <div className="flex items-center justify-between text-xs text-muted-foreground mb-4">
-                      <div className="flex items-center">
-                        <User className="w-3 h-3 mr-1" />
-                        {article.author.split(' ')[0]} {article.author.split(' ')[1]}
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <div className="flex items-center">
-                          <Calendar className="w-3 h-3 mr-1" />
-                          {article.date}
-                        </div>
-                        <div className="flex items-center">
-                          <Clock className="w-3 h-3 mr-1" />
-                          {article.readTime}
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+              {/* Articles Grid - Takes 3/4 of the width */}
+              <div className="lg:col-span-3">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {regularArticles.map((article) => (
+                    <Card key={article.id} className="group shadow-card border-0 bg-white overflow-hidden hover:shadow-gentle transition-all duration-300">
+                      <div className="relative h-48 overflow-hidden">
+                        <img
+                          src={article.image}
+                          alt={article.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                        <div className="absolute top-4 left-4 space-y-2">
+                          <Badge 
+                            variant="outline" 
+                            className="bg-white/90 backdrop-blur-sm border-0 block"
+                          >
+                            {article.category}
+                          </Badge>
+                          <Badge 
+                            variant="secondary" 
+                            className="bg-primary/90 text-white border-0 block"
+                          >
+                            {article.disease}
+                          </Badge>
+                          {article.id === 1 && (
+                            <Badge 
+                              variant="secondary" 
+                              className="bg-red-500/90 text-white border-0 flex items-center"
+                            >
+                              <Video className="w-3 h-3 mr-1" />
+                              Відео
+                            </Badge>
+                          )}
                         </div>
                       </div>
-                    </div>
 
-                    <Link to={`/article/${article.id}`}>
-                      <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300">
-                        Читати далі
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                      </Button>
-                    </Link>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+                      <CardHeader className="pb-3">
+                        <CardTitle className="text-lg group-hover:text-primary transition-colors duration-300 line-clamp-2">
+                          {article.title}
+                        </CardTitle>
+                      </CardHeader>
 
-            {/* Load More */}
-            <div className="text-center mt-12">
-              <Button variant="outline" size="lg">
-                Завантажити більше статей
-              </Button>
+                      <CardContent className="pt-0">
+                        <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
+                          {article.excerpt}
+                        </p>
+
+                        <div className="flex items-center justify-between text-xs text-muted-foreground mb-4">
+                          <div className="flex items-center">
+                            <User className="w-3 h-3 mr-1" />
+                            {article.author.split(' ')[0]} {article.author.split(' ')[1]}
+                          </div>
+                          <div className="flex items-center gap-3">
+                            <div className="flex items-center">
+                              <Calendar className="w-3 h-3 mr-1" />
+                              {article.date}
+                            </div>
+                            <div className="flex items-center">
+                              <Clock className="w-3 h-3 mr-1" />
+                              {article.readTime}
+                            </div>
+                          </div>
+                        </div>
+
+                        <Link to={`/article/${article.id}`}>
+                          <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300">
+                            Читати далі
+                            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                          </Button>
+                        </Link>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+
+                {/* Load More */}
+                <div className="text-center mt-12">
+                  <Button variant="outline" size="lg">
+                    Завантажити більше статей
+                  </Button>
+                </div>
+              </div>
+
+              {/* Right Sidebar with Filters */}
+              <div className="lg:col-span-1">
+                <div className="sticky top-8 space-y-6">
+                  {/* Categories Filter */}
+                  <Card className="shadow-card border-0 bg-white">
+                    <CardHeader className="pb-4">
+                      <CardTitle className="text-lg flex items-center">
+                        <Tag className="w-4 h-4 mr-2 text-primary" />
+                        Категорії
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <div className="space-y-2">
+                        {categories.map((category) => (
+                          <Button
+                            key={category}
+                            variant={selectedCategory === category ? "default" : "ghost"}
+                            size="sm"
+                            className="w-full justify-start text-left"
+                            onClick={() => setSelectedCategory(category)}
+                          >
+                            {category}
+                          </Button>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Diseases Filter */}
+                  <Card className="shadow-card border-0 bg-white">
+                    <CardHeader className="pb-4">
+                      <CardTitle className="text-lg flex items-center">
+                        <Tag className="w-4 h-4 mr-2 text-primary" />
+                        Захворювання
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <div className="space-y-2">
+                        {diseases.map((disease) => (
+                          <Button
+                            key={disease}
+                            variant={selectedDisease === disease ? "default" : "ghost"}
+                            size="sm"
+                            className="w-full justify-start text-left"
+                            onClick={() => setSelectedDisease(disease)}
+                          >
+                            {disease}
+                          </Button>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
             </div>
           </div>
         </section>
