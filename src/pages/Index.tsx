@@ -3,7 +3,6 @@ import Footer from "@/components/layout/Footer";
 import Hero from "@/components/home/Hero";
 import AboutSection from "@/components/home/AboutSection";
 import JointProblemsOverview from "@/components/home/JointProblemsOverview";
-import QuickLinks from "@/components/home/QuickLinks";
 import CTASection from "@/components/common/CTASection";
 
 const Index = () => {
@@ -14,7 +13,6 @@ const Index = () => {
         <Hero />
         <AboutSection />
         <JointProblemsOverview />
-        <QuickLinks />
       </main>
       <Footer />
     </div>
