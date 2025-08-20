@@ -155,18 +155,6 @@ const About = () => {
               </div>
             </div>
 
-            {/* Achievements Section */}
-            <div className="bg-white rounded-3xl p-8 shadow-card max-w-4xl mx-auto">
-              <h3 className="text-2xl font-semibold text-foreground mb-6 text-center">Наші досягнення</h3>
-              <div className="space-y-4">
-                {achievements.map((achievement, index) => (
-                  <div key={index} className="flex items-start space-x-3">
-                    <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground">{achievement}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </section>
 
