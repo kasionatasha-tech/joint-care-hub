@@ -126,28 +126,46 @@ const Contact = () => {
                   <div className="space-y-6">
                     <div>
                       <h5 className="font-semibold text-foreground mb-2">
-                        Скільки коштує навчання?
+                        Як швидко ви відповідаєте на повідомлення?
                       </h5>
                       <p className="text-muted-foreground">
-                        Всі наші курси абсолютно безкоштовні.
+                        Зазвичай ми відповідаємо протягом 24 годин у робочі дні.
                       </p>
                     </div>
 
                     <div>
                       <h5 className="font-semibold text-foreground mb-2">
-                        Як довго триває курс?
+                        Чи безкоштовні ваші консультації?
                       </h5>
                       <p className="text-muted-foreground">
-                        Тривалість курсів варіюється від 2 до 6 тижнів залежно від обраної програми.
+                        Так, усі базові консультації та участь у зустрічах безкоштовні.
                       </p>
                     </div>
 
                     <div>
                       <h5 className="font-semibold text-foreground mb-2">
-                        Чи видається сертифікат?
+                        Чи можу я залишитися анонімним?
                       </h5>
                       <p className="text-muted-foreground">
-                        Ні, не даємо. Навчання безкоштовне.
+                        Звичайно, ми поважаємо вашу приватність та конфіденційність.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h5 className="font-semibold text-foreground mb-2">
+                        Як проходять офлайн зустрічі?
+                      </h5>
+                      <p className="text-muted-foreground">
+                        Зустрічі проходять в комфортній атмосфері, де кожен може поділитися досвідом та отримати підтримку.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h5 className="font-semibold text-foreground mb-2">
+                        Чи потрібна попередня реєстрація на зустрічі?
+                      </h5>
+                      <p className="text-muted-foreground">
+                        Так, рекомендуємо зареєструватися заздалегідь для планування місця та матеріалів.
                       </p>
                     </div>
                   </div>
