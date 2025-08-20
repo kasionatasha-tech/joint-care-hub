@@ -28,50 +28,56 @@ const AboutSection = () => {
   return (
     <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Про нашу організацію
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+        {/* Intro Text */}
+        <div className="text-center mb-16 max-w-4xl mx-auto">
+          <p className="text-lg text-muted-foreground leading-relaxed">
             Ми — громадська організація, що об'єднує людей з захворюваннями опорно-рухового апарату. 
             Допомагаємо створити спільноту взаємної підтримки та надаємо доступ до якісної інформації 
             від кваліфікованих медичних фахівців.
           </p>
         </div>
 
-        {/* Mission Statement */}
-        <div className="bg-gradient-soft rounded-3xl p-8 md:p-12 mb-16 text-center">
-          <h3 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
-            Наша місія
-          </h3>
-          <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
+        {/* Our Goal */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
+            Наша ціль
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             Ми прагнемо зробити життя людей із труднощами руху більш незалежним і повноцінним. 
             Через відкриту освіту, просвітницькі ініціативи та розвиток спільноти ми підтримуємо тих, 
             хто стикається з фізичними викликами, і допомагаємо знайти нові можливості для участі в житті суспільства.
           </p>
         </div>
 
-        {/* Values Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {values.map((value, index) => {
-            const IconComponent = value.icon;
-            return (
-              <Card key={index} className="border-0 shadow-card bg-white/80 backdrop-blur-sm hover:shadow-gentle transition-all duration-300">
-                <CardContent className="p-6 text-center">
-                  <div className="w-16 h-16 bg-gradient-healing rounded-2xl mx-auto mb-4 flex items-center justify-center">
-                    <IconComponent className="w-8 h-8 text-white" />
+        {/* Why We Do This */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12">
+            Чому ми це робимо?
+          </h2>
+          
+          {/* Values Grid - 2x2 layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {values.map((value, index) => {
+              const IconComponent = value.icon;
+              return (
+                <div key={index} className="text-left">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-gradient-healing rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                      <IconComponent className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-foreground mb-3">
+                        {value.title}
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {value.description}
+                      </p>
+                    </div>
                   </div>
-                  <h4 className="text-lg font-semibold text-foreground mb-2">
-                    {value.title}
-                  </h4>
-                  <p className="text-muted-foreground text-sm">
-                    {value.description}
-                  </p>
-                </CardContent>
-              </Card>
-            );
-          })}
+                </div>
+              );
+            })}
+          </div>
         </div>
 
       </div>
