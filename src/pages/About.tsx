@@ -58,76 +58,113 @@ const About = () => {
       </div>
       
       <main>
-        {/* Hero Section */}
-        <section className="py-16 md:py-24 bg-gradient-soft">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Про нашу організацію
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Ми прагнемо зробити життя людей із труднощами руху більш незалежним і повноцінним. 
-              Через відкриту освіту, просвітницькі ініціативи та розвиток спільноти ми підтримуємо тих, 
-              хто стикається з фізичними викликами, і допомагаємо знайти нові можливості для участі в житті суспільства.
-            </p>
-          </div>
-        </section>
-
-        {/* Mission Section */}
-        <section className="py-16 md:py-24">
+        {/* Intro Section */}
+        <section className="py-16 md:py-24 bg-background">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                  Наша місія та цінності
-                </h2>
-                <p className="text-lg text-muted-foreground mb-8">
-                  Ми прагнемо зробити життя людей із труднощами руху більш незалежним і повноцінним. 
-                  Через відкриту освіту, просвітницькі ініціативи та розвиток спільноти ми підтримуємо тих, 
-                  хто стикається з фізичними викликами, і допомагаємо знайти нові можливості для участі в житті суспільства.
-                </p>
+            <div className="text-center mb-16 max-w-4xl mx-auto">
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Ми — громадська організація, що об'єднує людей з захворюваннями опорно-рухового апарату. 
+                Допомагаємо створити спільноту взаємної підтримки та надаємо доступ до якісної інформації 
+                від кваліфікованих медичних фахівців.
+              </p>
+            </div>
+
+            {/* Our Goal */}
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
+                Наша ціль
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+                Ми прагнемо зробити життя людей із труднощами руху більш незалежним і повноцінним. 
+                Через відкриту освіту, просвітницькі ініціативи та розвиток спільноти ми підтримуємо тих, 
+                хто стикається з фізичними викликами, і допомагаємо знайти нові можливості для участі в житті суспільства.
+              </p>
+            </div>
+
+            {/* Why We Do This */}
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12">
+                Чому ми це робимо?
+              </h2>
+              
+              {/* Values Grid - 2x2 layout */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <div className="text-left">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-gradient-healing rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                      <Heart className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-foreground mb-3">
+                        Турбота
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Ми дбаємо про кожного учасника нашої спільноти з розумінням та співчуттям
+                      </p>
+                    </div>
+                  </div>
+                </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="flex items-start space-x-3">
-                    <Heart className="w-6 h-6 text-primary mt-1" />
+                <div className="text-left">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-gradient-healing rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                      <Award className="w-6 h-6 text-white" />
+                    </div>
                     <div>
-                      <h4 className="font-semibold text-foreground mb-1">Турбота</h4>
-                      <p className="text-sm text-muted-foreground">Індивідуальний підхід до кожного</p>
+                      <h3 className="text-xl font-bold text-foreground mb-3">
+                        Довіра
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Надаємо перевірену інформацію від кваліфікованих медичних фахівців
+                      </p>
                     </div>
                   </div>
-                  <div className="flex items-start space-x-3">
-                    <Users className="w-6 h-6 text-primary mt-1" />
+                </div>
+                
+                <div className="text-left">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-gradient-healing rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                      <Users className="w-6 h-6 text-white" />
+                    </div>
                     <div>
-                      <h4 className="font-semibold text-foreground mb-1">Спільнота</h4>
-                      <p className="text-sm text-muted-foreground">Взаємна підтримка та розуміння</p>
+                      <h3 className="text-xl font-bold text-foreground mb-3">
+                        Спільнота
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Створюємо простір для взаємної підтримки та обміну досвідом
+                      </p>
                     </div>
                   </div>
-                  <div className="flex items-start space-x-3">
-                    <Target className="w-6 h-6 text-primary mt-1" />
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-1">Ефективність</h4>
-                      <p className="text-sm text-muted-foreground">Доведені методи лікування</p>
+                </div>
+                
+                <div className="text-left">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-gradient-healing rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
+                      <Target className="w-6 h-6 text-white" />
                     </div>
-                  </div>
-                  <div className="flex items-start space-x-3">
-                    <Award className="w-6 h-6 text-primary mt-1" />
                     <div>
-                      <h4 className="font-semibold text-foreground mb-1">Якість</h4>
-                      <p className="text-sm text-muted-foreground">Професійність у всьому</p>
+                      <h3 className="text-xl font-bold text-foreground mb-3">
+                        Результат
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        Допомагаємо покращити якість життя та подолати болі в суглобах
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
-              
-              <div className="bg-white rounded-3xl p-8 shadow-card">
-                <h3 className="text-2xl font-semibold text-foreground mb-6">Наші досягнення</h3>
-                <div className="space-y-4">
-                  {achievements.map((achievement, index) => (
-                    <div key={index} className="flex items-start space-x-3">
-                      <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                      <span className="text-muted-foreground">{achievement}</span>
-                    </div>
-                  ))}
-                </div>
+            </div>
+
+            {/* Achievements Section */}
+            <div className="bg-white rounded-3xl p-8 shadow-card max-w-4xl mx-auto">
+              <h3 className="text-2xl font-semibold text-foreground mb-6 text-center">Наші досягнення</h3>
+              <div className="space-y-4">
+                {achievements.map((achievement, index) => (
+                  <div key={index} className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="text-muted-foreground">{achievement}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
