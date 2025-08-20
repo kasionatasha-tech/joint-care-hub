@@ -158,45 +158,6 @@ const About = () => {
           </div>
         </section>
 
-        {/* Team Section */}
-        <section className="py-16 md:py-24 bg-secondary/30">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-                Наша команда
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Професіонали з багаторічним досвідом, які присвятили своє життя допомозі людям
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {team.map((member, index) => (
-                <Card key={index} className="text-center shadow-card border-0 bg-white">
-                  <CardContent className="p-8">
-                    <div className="w-24 h-24 bg-gradient-healing rounded-full mx-auto mb-6 flex items-center justify-center">
-                      <span className="text-white text-2xl font-bold">
-                        {member.name.split(' ').map(n => n[0]).join('')}
-                      </span>
-                    </div>
-                    <h3 className="text-xl font-semibold text-foreground mb-2">
-                      {member.name}
-                    </h3>
-                    <div className="text-primary font-medium mb-2">
-                      {member.role}
-                    </div>
-                    <div className="text-sm text-muted-foreground mb-4">
-                      {member.experience}
-                    </div>
-                    <p className="text-muted-foreground text-sm">
-                      {member.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
 
         <CTASection />
       </main>
