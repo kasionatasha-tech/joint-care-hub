@@ -251,42 +251,6 @@ const Article = () => {
           </div>
         </article>
 
-        {/* Related Articles */}
-        <section className="py-16 bg-secondary/30">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-8">
-              Схожі статті
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[1, 2].map((item) => (
-                <Link key={item} to={`/article/${item + 10}`} className="bg-white rounded-lg shadow-card overflow-hidden hover:shadow-gentle transition-all duration-300 group">
-                  <img
-                    src="/placeholder.svg"
-                    alt="Related article"
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="p-6">
-                    <Badge variant="secondary" className="mb-2">
-                      Реабілітація
-                    </Badge>
-                    <h4 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
-                      Фізіотерапія в домашніх умовах: ефективні методи
-                    </h4>
-                    <p className="text-muted-foreground text-sm mb-4">
-                      Дізнайтеся, як проводити якісну фізіотерапію вдома без спеціального обладнання.
-                    </p>
-                    <div className="flex items-center text-xs text-muted-foreground">
-                      <Calendar className="w-3 h-3 mr-1" />
-                      <span>8 лютого 2024</span>
-                      <Clock className="w-3 h-3 ml-4 mr-1" />
-                      <span>6 хв читання</span>
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
       </main>
       
       <Footer />
