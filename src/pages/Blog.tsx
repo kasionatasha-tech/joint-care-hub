@@ -197,10 +197,6 @@ const Blog = () => {
                       </CardHeader>
 
                       <CardContent className="pt-0">
-                        <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
-                          {article.excerpt}
-                        </p>
-
                         <div className="flex items-center justify-between text-xs text-muted-foreground mb-4">
                           <div className="flex items-center">
                             <User className="w-3 h-3 mr-1" />
