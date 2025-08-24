@@ -47,9 +47,6 @@ const Meetings = () => {
         <section className="py-12 lg:py-16 bg-gradient-to-br from-primary/5 via-background to-secondary/10">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-4xl mx-auto">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-                Офлайн зустрічі
-              </h1>
               <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
                 Приєднуйтесь до наших регулярних офлайн-сесій, де ділимося доступною інформацією та підтримуємо реабілітацію для активного життя
               </p>
@@ -66,15 +63,6 @@ const Meetings = () => {
         {/* Upcoming Meeting */}
         <section className="py-10">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Найближча зустріч
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Не пропустіть нашу наступну сесію з експертами
-              </p>
-            </div>
-
             <div className="max-w-5xl mx-auto">
               <Card className="overflow-hidden shadow-lg border-0">
                 <CardHeader className="bg-gradient-healing text-white p-8">
