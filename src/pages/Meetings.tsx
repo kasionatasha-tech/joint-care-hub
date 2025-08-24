@@ -42,124 +42,149 @@ const Meetings = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <main>
+      <main className="space-y-16">
+        {/* Hero Section */}
+        <section className="py-16 lg:py-24 bg-gradient-to-br from-primary/5 via-background to-secondary/10">
+          <div className="container mx-auto px-4">
+            <div className="text-center max-w-4xl mx-auto">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+                Офлайн зустрічі
+              </h1>
+              <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+                Приєднуйтесь до наших регулярних офлайн-сесій, де ділимося доступною інформацією та підтримуємо реабілітацію для активного життя
+              </p>
+              <div className="bg-card/60 backdrop-blur-sm rounded-lg p-6 border border-border/50">
+                <p className="text-lg text-muted-foreground">
+                  <MapPin className="inline w-5 h-5 mr-2 text-primary" />
+                  <strong>Офлайн формат.</strong> Зустрічаємося особисто. Адреса надсилається після реєстрації.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Upcoming Meeting */}
-        <section className="py-8">
+        <section className="py-16">
           <div className="container mx-auto px-4">
-            <div className="mb-12 text-center">
+            <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Найближча офлайн зустріч
+                Найближча зустріч
               </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-4">
-                Приєднуйтесь до наших регулярних офлайн-сесій, де ділимося доступною інформацією та підтримуємо реабілітацію для активного життя. На основі наших зустрічей ми також створюємо освітні ресурси для всієї спільноти.
-              </p>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                <strong>Офлайн формат.</strong> Зустрічаємося особисто. Адреса та деталі надсилаються після реєстрації.
+                Не пропустіть нашу наступну сесію з експертами
               </p>
             </div>
 
-            <div className="max-w-4xl mx-auto">
-              {/* Main Meeting Info */}
-              <div>
-                <Card className="shadow-card border-0 bg-white">
-                  <CardHeader className="bg-gradient-healing text-white rounded-t-lg">
-                    <div className="flex items-center justify-between">
-                      <Badge variant="secondary" className="bg-white/20 text-white border-0">
+            <div className="max-w-5xl mx-auto">
+              <Card className="overflow-hidden shadow-lg border-0">
+                <CardHeader className="bg-gradient-healing text-white p-8">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                    <div>
+                      <Badge variant="secondary" className="bg-white/20 text-white border-0 mb-4">
                         НАЙБЛИЖЧА ЗУСТРІЧ
                       </Badge>
+                      <CardTitle className="text-2xl lg:text-3xl text-white leading-tight">
+                        {upcomingMeeting.title}
+                      </CardTitle>
                     </div>
-                    <CardTitle className="text-2xl mt-4 text-white">
-                      {upcomingMeeting.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="p-8">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                      <div className="flex items-center">
-                        <Calendar className="w-5 h-5 text-primary mr-3" />
-                        <div>
-                          <div className="text-sm text-muted-foreground">Дата</div>
-                          <div className="font-medium">{upcomingMeeting.date}</div>
-                        </div>
+                  </div>
+                </CardHeader>
+                <CardContent className="p-8">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div className="flex items-center space-x-3 p-4 bg-secondary/30 rounded-lg">
+                      <div className="bg-primary/10 p-2 rounded-full">
+                        <Calendar className="w-5 h-5 text-primary" />
                       </div>
-                      <div className="flex items-center">
-                        <Clock className="w-5 h-5 text-primary mr-3" />
-                        <div>
-                          <div className="text-sm text-muted-foreground">Час</div>
-                          <div className="font-medium">{upcomingMeeting.time}</div>
-                        </div>
-                      </div>
-                      <div className="flex items-center">
-                        <Video className="w-5 h-5 text-primary mr-3" />
-                        <div>
-                          <div className="text-sm text-muted-foreground">Формат</div>
-                          <div className="font-medium">Офлайн зустріч</div>
-                        </div>
+                      <div>
+                        <div className="text-sm text-muted-foreground">Дата</div>
+                        <div className="font-semibold">{upcomingMeeting.date}</div>
                       </div>
                     </div>
+                    <div className="flex items-center space-x-3 p-4 bg-secondary/30 rounded-lg">
+                      <div className="bg-primary/10 p-2 rounded-full">
+                        <Clock className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <div className="text-sm text-muted-foreground">Час</div>
+                        <div className="font-semibold">{upcomingMeeting.time}</div>
+                      </div>
+                    </div>
+                    <div className="flex items-center space-x-3 p-4 bg-secondary/30 rounded-lg">
+                      <div className="bg-primary/10 p-2 rounded-full">
+                        <Video className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <div className="text-sm text-muted-foreground">Формат</div>
+                        <div className="font-semibold">Офлайн зустріч</div>
+                      </div>
+                    </div>
+                  </div>
 
-                    <p className="text-muted-foreground mb-8">
+                  <div className="bg-secondary/20 p-6 rounded-lg mb-8">
+                    <p className="text-muted-foreground leading-relaxed">
                       {upcomingMeeting.description}
                     </p>
+                  </div>
 
-                    <div className="mb-8">
-                      <h4 className="font-semibold text-foreground mb-4">Що ми розглянемо:</h4>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        {upcomingMeeting.topics.map((topic, index) => (
-                          <div key={index} className="flex items-start">
-                            <CheckCircle className="w-4 h-4 text-primary mt-1 mr-2 flex-shrink-0" />
-                            <span className="text-muted-foreground text-sm">{topic}</span>
-                          </div>
-                        ))}
-                      </div>
+                  <div className="mb-8">
+                    <h4 className="font-semibold text-foreground mb-6 text-lg">Програма зустрічі:</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {upcomingMeeting.topics.map((topic, index) => (
+                        <div key={index} className="flex items-start p-3 bg-secondary/10 rounded-lg">
+                          <CheckCircle className="w-5 h-5 text-primary mt-0.5 mr-3 flex-shrink-0" />
+                          <span className="text-muted-foreground">{topic}</span>
+                        </div>
+                      ))}
                     </div>
+                  </div>
 
-                    <Button size="lg" className="w-full">
+                  <div className="text-center">
+                    <Button size="lg" className="px-8 py-4 text-lg">
                       <Users className="w-5 h-5 mr-2" />
                       Зареєструватись безкоштовно
                     </Button>
-                  </CardContent>
-                </Card>
-              </div>
-
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
 
         {/* Past Meeting Videos */}
-        <section className="py-16 md:py-24 bg-secondary/30">
+        <section className="py-16 bg-secondary/20">
           <div className="container mx-auto px-4">
-            <div className="mb-12 text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 Відео попередніх зустрічей
               </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Перегляньте записи наших попередніх офлайн зустрічей. Корисна інформація та практичні поради від експертів.
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Перегляньте записи наших попередніх офлайн зустрічей з експертами
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
               {pastMeetings.map((meeting, index) => (
-                <Card key={index} className="overflow-hidden shadow-card border-0 bg-white">
-                  <div className="aspect-video bg-gradient-healing relative">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="bg-white/20 rounded-full p-4">
+                <Card key={index} className="overflow-hidden shadow-lg border-0 bg-card hover:shadow-xl transition-all duration-300 group">
+                  <div className="aspect-video bg-gradient-healing relative overflow-hidden">
+                    <div className="absolute inset-0 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                      <div className="bg-white/20 rounded-full p-4 group-hover:bg-white/30 transition-colors">
                         <Video className="w-8 h-8 text-white" />
                       </div>
                     </div>
-                    <Badge variant="secondary" className="absolute top-3 right-3 bg-white/20 text-white border-0">
+                    <Badge variant="secondary" className="absolute top-4 right-4 bg-black/40 text-white border-0 backdrop-blur-sm">
                       {meeting.duration}
                     </Badge>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                   <CardContent className="p-6">
-                    <h3 className="font-semibold text-foreground mb-2">
+                    <h3 className="font-semibold text-foreground mb-3 text-lg leading-tight group-hover:text-primary transition-colors">
                       {meeting.title}
                     </h3>
-                    <div className="flex items-center text-sm text-muted-foreground mb-4">
-                      <Calendar className="w-4 h-4 mr-1" />
+                    <div className="flex items-center text-sm text-muted-foreground mb-6">
+                      <Calendar className="w-4 h-4 mr-2" />
                       {meeting.date}
                     </div>
-                    <Button variant="outline" size="sm" className="w-full">
+                    <Button variant="outline" size="sm" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                       <Video className="w-4 h-4 mr-2" />
                       Переглянути відео
                     </Button>
