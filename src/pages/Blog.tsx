@@ -149,100 +149,152 @@ const Blog = () => {
           </div>
         </section>
 
-        {/* Articles Grid */}
+        {/* Main Content with Sidebar */}
         <section className="py-8">
           <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {regularArticles.map((article) => (
-                    <Card key={article.id} className="group shadow-card border-0 bg-white overflow-hidden hover:shadow-gentle transition-all duration-300">
-                      <div className="relative h-48 overflow-hidden">
-                        <img
-                          src={article.image}
-                          alt={article.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                        />
-                        <div className="absolute top-4 left-4 space-y-2">
-                          <Badge 
-                            variant="outline" 
-                            className="bg-white/90 backdrop-blur-sm border-0 block"
-                          >
-                            {article.category}
-                          </Badge>
-                          <Badge 
-                            variant="secondary" 
-                            className="bg-primary/90 text-white border-0 block"
-                          >
-                            {article.disease}
-                          </Badge>
-                          {article.id === 1 && (
+            <div className="max-w-7xl mx-auto">
+              <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                {/* Left Sidebar - Articles List */}
+                <div className="lg:col-span-1">
+                  <Card className="p-6 sticky top-4">
+                    <h3 className="text-lg font-semibold text-foreground mb-4">
+                      Останні статті
+                    </h3>
+                    <div className="space-y-3">
+                      {regularArticles.slice(0, 6).map((article) => (
+                        <Link 
+                          key={article.id} 
+                          to={`/article/${article.id}`}
+                          className="block p-3 rounded-lg hover:bg-secondary/30 transition-colors duration-200"
+                        >
+                          <h4 className="text-sm font-medium text-foreground line-clamp-2 mb-1">
+                            {article.title}
+                          </h4>
+                          <div className="flex items-center text-xs text-muted-foreground">
+                            <Calendar className="w-3 h-3 mr-1" />
+                            {article.date}
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                    
+                    {/* Popular Categories */}
+                    <div className="mt-8">
+                      <h4 className="text-sm font-semibold text-foreground mb-3">
+                        Популярні теми
+                      </h4>
+                      <div className="space-y-2">
+                        <Badge variant="secondary" className="block text-center py-2">
+                          Здоров'я суглобів
+                        </Badge>
+                        <Badge variant="outline" className="block text-center py-2">
+                          Профілактика
+                        </Badge>
+                        <Badge variant="outline" className="block text-center py-2">
+                          Лікування
+                        </Badge>
+                        <Badge variant="outline" className="block text-center py-2">
+                          Вправи
+                        </Badge>
+                      </div>
+                    </div>
+                  </Card>
+                </div>
+
+                {/* Right Content - Articles Grid */}
+                <div className="lg:col-span-3">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {regularArticles.map((article) => (
+                      <Card key={article.id} className="group shadow-card border-0 bg-white overflow-hidden hover:shadow-gentle transition-all duration-300">
+                        <div className="relative h-48 overflow-hidden">
+                          <img
+                            src={article.image}
+                            alt={article.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
+                          <div className="absolute top-4 left-4 space-y-2">
+                            <Badge 
+                              variant="outline" 
+                              className="bg-white/90 backdrop-blur-sm border-0 block"
+                            >
+                              {article.category}
+                            </Badge>
                             <Badge 
                               variant="secondary" 
-                              className="bg-red-500/90 text-white border-0 flex items-center"
+                              className="bg-primary/90 text-white border-0 block"
                             >
-                              <Video className="w-3 h-3 mr-1" />
-                              Відео
+                              {article.disease}
                             </Badge>
-                          )}
-                        </div>
-                      </div>
-
-                      <CardHeader className="pb-3">
-                        <CardTitle className="text-lg group-hover:text-primary transition-colors duration-300 line-clamp-2">
-                          {article.title}
-                        </CardTitle>
-                      </CardHeader>
-
-                      <CardContent className="pt-0">
-                        <div className="flex items-center justify-between text-xs text-muted-foreground mb-4">
-                          <div className="flex items-center">
-                            <User className="w-3 h-3 mr-1" />
-                            {article.author.split(' ')[0]} {article.author.split(' ')[1]}
-                          </div>
-                          <div className="flex items-center gap-3">
-                            <div className="flex items-center">
-                              <Calendar className="w-3 h-3 mr-1" />
-                              {article.date}
-                            </div>
-                            <div className="flex items-center">
-                              <Clock className="w-3 h-3 mr-1" />
-                              {article.readTime}
-                            </div>
+                            {article.id === 1 && (
+                              <Badge 
+                                variant="secondary" 
+                                className="bg-red-500/90 text-white border-0 flex items-center"
+                              >
+                                <Video className="w-3 h-3 mr-1" />
+                                Відео
+                              </Badge>
+                            )}
                           </div>
                         </div>
 
-                        <Link to={`/article/${article.id}`}>
-                          <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300">
-                            Читати далі
-                            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                          </Button>
-                        </Link>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              
-              {/* No Results Message */}
-              {filteredArticles.length === 0 && (
-                <div className="text-center py-12">
-                  <Search className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold text-foreground mb-2">
-                    Нічого не знайдено
-                  </h3>
-                  <p className="text-muted-foreground">
-                    Спробуйте змінити пошуковий запит
-                  </p>
-                </div>
-              )}
+                        <CardHeader className="pb-3">
+                          <CardTitle className="text-lg group-hover:text-primary transition-colors duration-300 line-clamp-2">
+                            {article.title}
+                          </CardTitle>
+                        </CardHeader>
 
-              {/* Load More */}
-              {filteredArticles.length > 0 && (
-                <div className="text-center mt-12">
-                  <Button variant="outline" size="lg">
-                    Завантажити більше статей
-                  </Button>
+                        <CardContent className="pt-0">
+                          <div className="flex items-center justify-between text-xs text-muted-foreground mb-4">
+                            <div className="flex items-center">
+                              <User className="w-3 h-3 mr-1" />
+                              {article.author.split(' ')[0]} {article.author.split(' ')[1]}
+                            </div>
+                            <div className="flex items-center gap-3">
+                              <div className="flex items-center">
+                                <Calendar className="w-3 h-3 mr-1" />
+                                {article.date}
+                              </div>
+                              <div className="flex items-center">
+                                <Clock className="w-3 h-3 mr-1" />
+                                {article.readTime}
+                              </div>
+                            </div>
+                          </div>
+
+                          <Link to={`/article/${article.id}`}>
+                            <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300">
+                              Читати далі
+                              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                            </Button>
+                          </Link>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                  
+                  {/* No Results Message */}
+                  {filteredArticles.length === 0 && (
+                    <div className="text-center py-12">
+                      <Search className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
+                      <h3 className="text-xl font-semibold text-foreground mb-2">
+                        Нічого не знайдено
+                      </h3>
+                      <p className="text-muted-foreground">
+                        Спробуйте змінити пошуковий запит
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Load More */}
+                  {filteredArticles.length > 0 && (
+                    <div className="text-center mt-8">
+                      <Button variant="outline" size="lg">
+                        Завантажити більше статей
+                      </Button>
+                    </div>
+                  )}
                 </div>
-              )}
+              </div>
             </div>
           </div>
         </section>
