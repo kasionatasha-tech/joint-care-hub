@@ -42,9 +42,9 @@ const Meetings = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <main className="space-y-16">
+      <main className="space-y-8">
         {/* Hero Section */}
-        <section className="py-16 lg:py-24 bg-gradient-to-br from-primary/5 via-background to-secondary/10">
+        <section className="py-12 lg:py-16 bg-gradient-to-br from-primary/5 via-background to-secondary/10">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-4xl mx-auto">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
@@ -64,9 +64,9 @@ const Meetings = () => {
         </section>
 
         {/* Upcoming Meeting */}
-        <section className="py-16">
+        <section className="py-10">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
+            <div className="text-center mb-8">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 Найближча зустріч
               </h2>
@@ -151,9 +151,9 @@ const Meetings = () => {
         </section>
 
         {/* Past Meeting Videos */}
-        <section className="py-16 bg-secondary/20">
+        <section className="py-10 bg-secondary/20">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
+            <div className="text-center mb-8">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
                 Відео попередніх зустрічей
               </h2>
