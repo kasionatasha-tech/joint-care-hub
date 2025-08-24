@@ -52,17 +52,8 @@ const Contact = () => {
       <Header />
       
       <main>
-        {/* Hero Section */}
-        <section className="py-12 bg-background">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Контакти
-            </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Зв'яжіться з нами для отримання консультації або відповідей на ваші питання
-            </p>
-          </div>
-        </section>
+        {/* Contact Section starts with padding */}
+        <section className="pt-12"></section>
 
         {/* Contact Section */}
         <section className="py-16">
