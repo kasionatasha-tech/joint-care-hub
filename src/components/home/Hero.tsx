@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, Users, Clock } from "lucide-react";
-import heroImage from "@/assets/hero-image.jpg";
+import heroImage from "@/assets/hero-joint-health.jpg";
 import {
   Carousel,
   CarouselContent,
