@@ -177,27 +177,6 @@ const Blog = () => {
                         </Link>
                       ))}
                     </div>
-                    
-                    {/* Popular Categories */}
-                    <div className="mt-8">
-                      <h4 className="text-sm font-semibold text-foreground mb-3">
-                        Популярні теми
-                      </h4>
-                      <div className="space-y-2">
-                        <Badge variant="secondary" className="block text-center py-2">
-                          Здоров'я суглобів
-                        </Badge>
-                        <Badge variant="outline" className="block text-center py-2">
-                          Профілактика
-                        </Badge>
-                        <Badge variant="outline" className="block text-center py-2">
-                          Лікування
-                        </Badge>
-                        <Badge variant="outline" className="block text-center py-2">
-                          Вправи
-                        </Badge>
-                      </div>
-                    </div>
                   </Card>
                 </div>
 
