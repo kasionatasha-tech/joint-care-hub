@@ -60,6 +60,15 @@ export default {
 					blue: 'hsl(var(--trust-blue))',
 					'blue-light': 'hsl(var(--trust-blue-light))'
 				},
+				brand: {
+					'teal-primary': 'hsl(var(--brand-teal-primary))',
+					'teal-medium': 'hsl(var(--brand-teal-medium))',
+					'blue-light': 'hsl(var(--brand-blue-light))',
+					'gray-light': 'hsl(var(--brand-gray-light))',
+					'teal-light': 'hsl(var(--brand-teal-light))',
+					'gray-dark': 'hsl(var(--brand-gray-dark))',
+					'gray-medium': 'hsl(var(--brand-gray-medium))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',

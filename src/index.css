@@ -8,49 +8,50 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 195 20% 98%;
-    --foreground: 200 25% 15%;
+    --background: 198 28% 95%;
+    --foreground: 280 2% 30%;
 
     --card: 0 0% 100%;
-    --card-foreground: 200 25% 15%;
+    --card-foreground: 280 2% 30%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 200 25% 15%;
+    --popover-foreground: 280 2% 30%;
 
-    --primary: 160 65% 45%;
+    --primary: 186 100% 21%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 195 40% 94%;
-    --secondary-foreground: 200 25% 15%;
+    --secondary: 198 28% 88%;
+    --secondary-foreground: 280 2% 30%;
 
-    --muted: 195 20% 96%;
-    --muted-foreground: 200 15% 55%;
+    --muted: 197 25% 90%;
+    --muted-foreground: 210 1% 66%;
 
-    --accent: 200 100% 88%;
-    --accent-foreground: 200 25% 15%;
+    --accent: 190 33% 66%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 195 30% 90%;
-    --input: 195 30% 95%;
-    --ring: 160 65% 45%;
+    --border: 197 25% 85%;
+    --input: 198 28% 92%;
+    --ring: 186 100% 21%;
 
-    /* Custom design tokens for healthcare organization */
-    --healing-green: 160 65% 45%;
-    --healing-green-light: 160 50% 85%;
-    --trust-blue: 200 70% 55%;
-    --trust-blue-light: 200 60% 90%;
-    --warm-neutral: 45 25% 92%;
-    --text-soft: 200 15% 35%;
+    /* Brand colors from Pantone guide */
+    --brand-teal-primary: 186 100% 21%;        /* PANTONE 7715 C */
+    --brand-teal-medium: 183 47% 47%;          /* PANTONE 7710 UP */
+    --brand-blue-light: 198 28% 88%;          /* PANTONE 657 UP */
+    --brand-gray-light: 197 25% 80%;          /* PANTONE 643 UP */
+    --brand-teal-light: 190 33% 66%;          /* PANTONE 4156 UP */
+    --brand-gray-dark: 280 2% 30%;            /* PANTONE 2336 C */
+    --brand-gray-medium: 210 1% 66%;          /* Cool Gray 6 C */
     
-    /* Gradients */
-    --gradient-healing: linear-gradient(135deg, hsl(160 65% 45%), hsl(200 70% 55%));
-    --gradient-soft: linear-gradient(180deg, hsl(195 20% 98%), hsl(195 40% 94%));
+    /* Gradients using brand colors */
+    --gradient-healing: linear-gradient(135deg, hsl(186 100% 21%), hsl(183 47% 47%));
+    --gradient-soft: linear-gradient(180deg, hsl(198 28% 95%), hsl(198 28% 88%));
     
-    /* Shadows */
-    --shadow-gentle: 0 4px 20px -4px hsl(160 65% 45% / 0.15);
-    --shadow-card: 0 8px 30px -8px hsl(200 25% 15% / 0.1);
+    /* Shadows using brand colors */
+    --shadow-gentle: 0 4px 20px -4px hsl(186 100% 21% / 0.15);
+    --shadow-card: 0 8px 30px -8px hsl(280 2% 30% / 0.1);
 
     --radius: 0.5rem;
 
@@ -72,33 +73,33 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 280 2% 8%;
+    --foreground: 198 28% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 280 2% 12%;
+    --card-foreground: 198 28% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 280 2% 12%;
+    --popover-foreground: 198 28% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 183 47% 60%;
+    --primary-foreground: 280 2% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 280 2% 20%;
+    --secondary-foreground: 198 28% 88%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 280 2% 16%;
+    --muted-foreground: 210 1% 66%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 190 33% 66%;
+    --accent-foreground: 280 2% 8%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 198 28% 95%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 280 2% 20%;
+    --input: 280 2% 16%;
+    --ring: 183 47% 60%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
