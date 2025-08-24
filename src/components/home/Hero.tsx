@@ -1,8 +1,19 @@
-import { Button } from "@/components/ui/button";
-import { Calendar, Users, Clock } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
+import Banner from "@/components/common/Banner";
 
-const Hero = () => {
+interface BannerData {
+  title: string;
+  description: string;
+  buttonText: string;
+  bgColor?: string;
+  href?: string;
+}
+
+interface HeroProps {
+  banners?: BannerData[];
+}
+
+const Hero = ({ banners = [] }: HeroProps) => {
   return (
     <section className="relative min-h-[80vh] bg-gradient-soft flex items-center pt-12">
       <div className="container mx-auto px-4">
@@ -22,25 +33,21 @@ const Hero = () => {
               </p>
             </div>
 
-            {/* Next Meeting Banner */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-card border border-border">
-              <div className="flex items-center mb-3">
-                <Calendar className="w-5 h-5 text-primary mr-2" />
-                <span className="text-sm font-medium text-primary">Найближча офлайн-зустріч</span>
+            {/* Dynamic Banners */}
+            {banners.length > 0 && (
+              <div className="space-y-4">
+                {banners.map((banner, index) => (
+                  <Banner 
+                    key={index}
+                    title={banner.title}
+                    description={banner.description}
+                    buttonText={banner.buttonText}
+                    bgColor={banner.bgColor}
+                    href={banner.href}
+                  />
+                ))}
               </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">
-                "Вправи для здоров'я колін: від болю до свободи руху"
-              </h3>
-              <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
-                <div className="flex items-center">
-                  <Clock className="w-4 h-4 mr-1" />
-                  15 лютого, 19:00
-                </div>
-              </div>
-              <Button size="lg" className="w-full md:w-auto">
-                Зареєструватись безкоштовно
-              </Button>
-            </div>
+            )}
 
           </div>
 
