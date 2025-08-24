@@ -78,7 +78,7 @@ const Article = () => {
       <Header />
       
       {/* Breadcrumbs */}
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-4 py-12">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -102,7 +102,7 @@ const Article = () => {
       
       <main>
         {/* Article Header */}
-        <article className="py-8 md:py-16">
+        <article className="py-12">
           <div className="container mx-auto px-4 max-w-4xl">
             {/* Back Button */}
             <div className="mb-8">
