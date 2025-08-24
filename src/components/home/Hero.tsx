@@ -62,13 +62,6 @@ const Hero = () => {
                       alt="Допомога при проблемах з суглобами"
                       className="w-full h-[500px] object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-                      <div className="p-6 text-white">
-                        <h3 className="text-2xl font-bold mb-2">Проблеми з суглобами?</h3>
-                        <p className="text-lg mb-1">Отримайте кваліфіковану допомогу</p>
-                        <p className="text-sm opacity-90">Діагностика • Лікування • Реабілітація</p>
-                      </div>
-                    </div>
                   </div>
                 </CarouselItem>
                 <CarouselItem>
