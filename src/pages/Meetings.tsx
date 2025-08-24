@@ -42,9 +42,9 @@ const Meetings = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <main className="space-y-8">
+      <main className="space-y-8 pt-12">
         {/* Hero Section */}
-        <section className="py-12 bg-gradient-to-br from-primary/5 via-background to-secondary/10">
+        <section className="pt-0 pb-12 bg-gradient-to-br from-primary/5 via-background to-secondary/10">
           <div className="container mx-auto px-4">
             <div className="text-center max-w-4xl mx-auto">
               <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">

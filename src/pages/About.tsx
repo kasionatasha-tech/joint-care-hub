@@ -41,7 +41,7 @@ const About = () => {
       <Header />
       
       {/* Breadcrumbs */}
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 pt-12 pb-4">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -59,7 +59,7 @@ const About = () => {
       
       <main>
         {/* Intro Section */}
-        <section className="py-12 bg-background">
+        <section className="pt-0 pb-12 bg-background">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16 max-w-4xl mx-auto">
               <p className="text-lg text-muted-foreground leading-relaxed">
