@@ -18,14 +18,14 @@ const Hero = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-                Активне життя{" "}
+                Здорове життя з{" "}
                 <span className="bg-gradient-healing bg-clip-text text-transparent">
-                  без болю і обмежень
+                  захворюваннями опорно-рухового апарату
                 </span>
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
-                Покращуємо добробут людей із труднощами руху завдяки відкритій інформації, 
-                навчальним ресурсам і просвітницьким ініціативам.
+                Покращуємо якість життя людей із захворюваннями опорно-рухового апарату через доступну інформацію, 
+                освітні ресурси, підтримку реабілітації та просвітницьку діяльність.
               </p>
             </div>
 
@@ -36,7 +36,7 @@ const Hero = () => {
                 <span className="text-sm font-medium text-primary">Найближча офлайн-зустріч</span>
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-2">
-                "Вправи для здоров'я колін: від болю до свободи руху"
+                "Реабілітація після операцій на суглобах: перші кроки до відновлення"
               </h3>
               <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-4">
                 <div className="flex items-center">
@@ -45,7 +45,7 @@ const Hero = () => {
                 </div>
               </div>
               <Button size="lg" className="w-full md:w-auto">
-                Зареєструватись безкоштовно
+                Записатись на навчання
               </Button>
             </div>
 
@@ -67,10 +67,10 @@ const Hero = () => {
                 <CarouselItem>
                   <div className="relative rounded-3xl overflow-hidden shadow-gentle bg-brand-teal-primary flex items-center justify-center h-[500px]">
                     <div className="text-center text-white p-8">
-                      <h3 className="text-3xl font-bold mb-4">Безкоштовна консультація</h3>
-                      <p className="text-lg mb-6">Отримайте персональні рекомендації</p>
+                      <h3 className="text-3xl font-bold mb-4">Програма реабілітації</h3>
+                      <p className="text-lg mb-6">Індивідуальний підхід до відновлення</p>
                       <Button variant="secondary" size="lg">
-                        Записатись онлайн
+                        Дізнатись більше
                       </Button>
                     </div>
                   </div>
@@ -78,8 +78,8 @@ const Hero = () => {
                 <CarouselItem>
                   <div className="relative rounded-3xl overflow-hidden shadow-gentle bg-brand-teal-medium flex items-center justify-center h-[500px]">
                     <div className="text-center text-white p-8">
-                      <h3 className="text-3xl font-bold mb-4">Навчальні ресурси</h3>
-                      <p className="text-lg mb-6">Вправи та поради від експертів</p>
+                      <h3 className="text-3xl font-bold mb-4">Освітні ресурси</h3>
+                      <p className="text-lg mb-6">Матеріали для пацієнтів та фахівців</p>
                       <Button variant="secondary" size="lg">
                         Переглянути
                       </Button>
@@ -89,8 +89,8 @@ const Hero = () => {
                 <CarouselItem>
                   <div className="relative rounded-3xl overflow-hidden shadow-gentle bg-brand-teal-light flex items-center justify-center h-[500px]">
                     <div className="text-center text-white p-8">
-                      <h3 className="text-3xl font-bold mb-4">Спільнота підтримки</h3>
-                      <p className="text-lg mb-6">Приєднуйтесь до нашої спільноти</p>
+                      <h3 className="text-3xl font-bold mb-4">Підтримка для фахівців</h3>
+                      <p className="text-lg mb-6">Ресурси для працівників реабілітації</p>
                       <Button variant="secondary" size="lg">
                         Дізнатись більше
                       </Button>

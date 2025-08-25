@@ -11,9 +11,9 @@ const JointProblemsOverview = () => {
     },
     {
       icon: Activity,
-      title: "Травми суглобів",
-      description: "Ушкодження зв'язок, хрящів та суглобових сумок через спорт або побутові травми",
-      prevalence: "15% населення"
+      title: "Травми та післяопераційний період",
+      description: "Ушкодження м'язів, зв'язок та суглобів, що потребують професійної реабілітації",
+      prevalence: "25% населення"
     },
     {
       icon: Zap,
@@ -34,13 +34,13 @@ const JointProblemsOverview = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Проблеми з суглобами
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Розуміння основних проблем з суглобами допомагає краще підготуватися 
-            до їх вирішення та знайти найефективніші методи лікування.
-          </p>
+        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+          Захворювання опорно-рухового апарату
+        </h2>
+        <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          Розуміння основних захворювань опорно-рухового апарату допомагає краще підготуватися 
+          до лікування, реабілітації та знайти найефективніші методи відновлення.
+        </p>
         </div>
 
         {/* Problems Grid */}

@@ -7,22 +7,22 @@ const QuickLinks = () => {
   const sections = [
     {
       icon: Calendar,
-      title: "Офлайн зустрічі",
-      description: "Приєднуйтесь до наших регулярних офлайн-сесій з експертами та іншими учасниками",
+      title: "Програми реабілітації",
+      description: "Приєднуйтесь до наших програм відновлення з експертами та іншими пацієнтами",
       link: "/meetings",
       color: "bg-gradient-to-br from-green-500 to-blue-500"
     },
     {
       icon: BookOpen,
-      title: "Корисний блог",
-      description: "Читайте статті про профілактику, лікування та поради від медичних фахівців",
+      title: "Освітні матеріали",
+      description: "Читайте статті про захворювання, реабілітацію та поради від медичних фахівців",
       link: "/blog",
       color: "bg-gradient-to-br from-purple-500 to-pink-500"
     },
     {
       icon: Users,
-      title: "Про нас",
-      description: "Дізнайтесь більше про нашу місію, цінності та команду професіоналів",
+      title: "Для фахівців",
+      description: "Ресурси та підтримка для працівників у сфері реабілітації та відновлення",
       link: "/about",
       color: "bg-gradient-to-br from-orange-500 to-red-500"
     }
@@ -34,10 +34,10 @@ const QuickLinks = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Досліджуйте наші ресурси
+            Наші ресурси для вас
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Знайдіть все необхідне для покращення здоров'я ваших суглобів у одному місці
+            Знайдіть все необхідне для покращення здоров'я при захворюваннях опорно-рухового апарату
           </p>
         </div>
 
@@ -78,17 +78,18 @@ const QuickLinks = () => {
         <div className="mt-16 text-center">
           <div className="bg-gradient-healing rounded-3xl p-8 md:p-12 text-white">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              Готові розпочати свій шлях до здоров'я?
+              Готові розпочати програму відновлення?
             </h3>
             <p className="text-white/90 mb-8 max-w-2xl mx-auto">
-              Приєднуйтесь до тисяч людей, які вже покращили своє життя завдяки нашій підтримці та знанням
+              Приєднуйтесь до спільноти людей з захворюваннями опорно-рухового апарату, 
+              які підтримують один одного на шляху до здорового життя
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary">
-                Зареєструватись на офлайн зустріч
+                Записатись на програму реабілітації
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-gray-900">
-                Перейти до корисних матеріалів
+                Переглянути освітні матеріали
               </Button>
             </div>
           </div>

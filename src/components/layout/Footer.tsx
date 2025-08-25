@@ -16,13 +16,12 @@ const Footer = () => {
               />
             </div>
             <p className="text-muted-foreground mb-4 max-w-md">
-              Ми прагнемо зробити життя людей із труднощами руху більш незалежним і повноцінним. 
-              Через відкриту освіту, просвітницькі ініціативи та розвиток спільноти ми підтримуємо тих, 
-              хто стикається з фізичними викликами.
+              Покращуємо якість життя людей з захворюваннями опорно-рухового апарату через доступну інформацію, 
+              освітні ресурси, підтримку реабілітації та просвітницьку діяльність для здорового та активного життя.
             </p>
             <div className="flex items-center text-sm text-muted-foreground">
               <Heart className="w-4 h-4 mr-2 text-primary" />
-              Зроблено з турботою для вашого здоров'я
+              Зроблено з турботою для здорового життя
             </div>
           </div>
 
@@ -37,22 +36,22 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/meetings" className="text-muted-foreground hover:text-primary transition-colors">
-                  Офлайн зустрічі
+                  Програми реабілітації
                 </Link>
               </li>
               <li>
                 <Link to="/videos" className="text-muted-foreground hover:text-primary transition-colors">
-                  Відеозаписи
+                  Освітні відео
                 </Link>
               </li>
               <li>
                 <Link to="/blog" className="text-muted-foreground hover:text-primary transition-colors">
-                  Корисні статті
+                  Статті про здоров'я
                 </Link>
               </li>
               <li>
                 <Link to="/documents" className="text-muted-foreground hover:text-primary transition-colors">
-                  Наші документи
+                  Документи
                 </Link>
               </li>
             </ul>
