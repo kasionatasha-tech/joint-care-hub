@@ -58,10 +58,13 @@ const About = () => {
       </div>
       
       <main>
-        {/* Intro Section */}
+        {/* About Section */}
         <section className="pt-0 pb-12 bg-background">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16 max-w-4xl mx-auto">
+              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
+                Про Нас
+              </h1>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Знайомтесь з командою, яка ставить перед собою великі цілі і досягає їх! Ми щодня працюємо над тим, 
                 щоб забезпечити найкращі умови для розвитку людей із захворюваннями опорно-рухового апарату, 
@@ -81,85 +84,8 @@ const About = () => {
                 та просвітницької діяльності для здорового, активного та повноцінного життя.
               </p>
             </div>
-
-
-            {/* Why We Do This */}
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12">
-                Чому ми це робимо?
-              </h2>
-              
-              {/* Values Grid - 2x2 layout */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-                <div className="text-left">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gradient-healing rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
-                      <Heart className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-foreground mb-3">
-                        Турбота
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        Ми дбаємо про кожного учасника нашої спільноти з розумінням та співчуттям
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="text-left">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gradient-healing rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
-                      <Award className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-foreground mb-3">
-                        Довіра
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        Надаємо перевірену інформацію від кваліфікованих медичних фахівців
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="text-left">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gradient-healing rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
-                      <Users className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-foreground mb-3">
-                        Спільнота
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        Створюємо простір для взаємної підтримки та обміну досвідом
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="text-left">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-gradient-healing rounded-xl flex items-center justify-center flex-shrink-0 mt-1">
-                      <Target className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-foreground mb-3">
-                        Результат
-                      </h3>
-                      <p className="text-muted-foreground leading-relaxed">
-                        Допомагаємо покращити якість життя та подолати болі в суглобах
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
           </div>
         </section>
-
 
         <CTASection />
       </main>
