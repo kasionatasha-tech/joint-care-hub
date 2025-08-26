@@ -5,6 +5,8 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import CTASection from "@/components/common/CTASection";
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { CheckCircle2 } from "lucide-react";
 
 const About = () => {
   const team = [
@@ -42,6 +44,26 @@ const About = () => {
     "Освітні програми з фізичної реабілітації"
   ];
 
+  useEffect(() => {
+    document.title = "Про нас — Osnova Care";
+    const desc = "Osnova Care — команда експертів з ревматології, ортопедії та реабілітації. Допомагаємо підтримувати здоров’я суглобів та активне життя.";
+    let meta = document.querySelector('meta[name="description"]');
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.setAttribute("name", "description");
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute("content", desc);
+
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement("link");
+      canonical.setAttribute("rel", "canonical");
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute("href", `${window.location.origin}/about`);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -67,7 +89,7 @@ const About = () => {
         {/* About Section */}
         <section className="pt-0 pb-12 bg-background">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-16 max-w-4xl mx-auto">
+            <div className="text-center mb-16 max-w-4xl mx-auto bg-card border rounded-2xl p-8 shadow">
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
                 Про Нас
               </h1>
@@ -104,6 +126,22 @@ const About = () => {
               </p>
             </div>
 
+            {/* Achievements */}
+            <div className="mb-16">
+              <div className="text-center mb-10">
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground">Наші досягнення</h2>
+                <div className="h-1 w-20 bg-primary/70 mx-auto mt-3 rounded-full"></div>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
+                {achievements.map((item, idx) => (
+                  <div key={idx} className="flex items-start gap-3 bg-muted/40 border rounded-xl p-4">
+                    <CheckCircle2 className="h-5 w-5 text-primary mt-0.5" aria-hidden="true" />
+                    <p className="text-foreground text-left">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             {/* Team Section */}
             <div className="mb-16">
               <div className="text-center mb-10">
@@ -114,11 +152,11 @@ const About = () => {
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
                 {team.map((member, index) => (
-                  <Card key={index} className="bg-card shadow-card">
+                  <Card key={index} className="bg-card border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                     <CardContent className="p-6 flex flex-col items-center text-center">
-                      <Avatar className="h-28 w-28 md:h-40 md:w-40 mb-4 ring-2 ring-primary/20">
+                      <Avatar className="h-32 w-32 md:h-44 md:w-44 mb-4 ring-2 ring-primary/20">
                         {/* <AvatarImage src={member.image} alt={`Фото ${member.name}`} /> */}
-                        <AvatarFallback className="bg-brand-blue-light text-brand-gray-dark text-4xl md:text-5xl font-bold">
+                        <AvatarFallback className="text-4xl md:text-5xl font-bold">
                           {member.name.charAt(0)}
                         </AvatarFallback>
                       </Avatar>
@@ -128,6 +166,8 @@ const About = () => {
                       <p className="text-primary font-medium mt-1">
                         {member.role}
                       </p>
+                      <p className="text-sm text-muted-foreground mt-1">{member.experience}</p>
+                      <p className="text-sm text-muted-foreground mt-2">{member.description}</p>
                     </CardContent>
                   </Card>
                 ))}
