@@ -82,11 +82,8 @@ const About = () => {
         <section className="pt-0 pb-12 bg-background">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16 max-w-4xl mx-auto bg-card border rounded-2xl p-8 shadow">
-              <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
-                Про Нас
-              </h1>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Знайомтесь з командою, яка ставить перед собою великі цілі і досягає їх! Ми щодня працюємо над тим, 
+                <span className="font-bold text-foreground">Про нас.</span> Знайомтесь з командою, яка ставить перед собою великі цілі і досягає їх! Ми щодня працюємо над тим, 
                 щоб забезпечити найкращі умови для розвитку людей із захворюваннями опорно-рухового апарату, 
                 сприяючи їхньому здоров'ю та активному способу життя. Ми існуємо не для формальностей, 
                 а щоб змінювати життя на краще через реальні результати.
