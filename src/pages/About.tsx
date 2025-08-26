@@ -81,7 +81,7 @@ const About = () => {
         {/* About Section */}
         <section className="pt-0 pb-12 bg-background">
           <div className="container mx-auto px-4">
-            <div className="mb-16 max-w-4xl mx-auto">
+            <div className="mb-16 max-w-5xl mx-auto">
               <h1 className="text-2xl md:text-3xl font-bold text-foreground mb-4 text-left">
                 Про нас
               </h1>
@@ -94,7 +94,7 @@ const About = () => {
             </div>
 
             {/* Our Mission */}
-            <div className="mb-16 max-w-4xl mx-auto">
+            <div className="mb-16 max-w-5xl mx-auto">
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4 text-left">
                 Наша місія
               </h2>
@@ -106,7 +106,7 @@ const About = () => {
             </div>
 
             {/* For Whom We Work */}
-            <div className="mb-16 max-w-4xl mx-auto">
+            <div className="mb-16 max-w-5xl mx-auto">
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4 text-left">
                 Для кого ми працюємо
               </h2>
@@ -147,12 +147,12 @@ const About = () => {
 
             {/* Team Section */}
             <div className="mb-16">
-              <div className="mb-10 max-w-6xl mx-auto">
+              <div className="mb-10 max-w-5xl mx-auto">
                 <h2 className="text-2xl md:text-3xl font-bold text-foreground text-left">
                   Команда
                 </h2>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
                 {team.map((member, index) => (
                   <Card key={index} className="bg-card border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
                     <CardContent className="p-6 flex flex-col items-center text-center">
