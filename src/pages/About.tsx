@@ -84,6 +84,36 @@ const About = () => {
                 та просвітницької діяльності для здорового, активного та повноцінного життя.
               </p>
             </div>
+
+            {/* Team Section */}
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
+                Команда
+              </h2>
+              <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                {team.map((member, index) => (
+                  <Card key={index} className="text-center">
+                    <CardContent className="p-8">
+                      <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <Users className="w-10 h-10 text-primary" />
+                      </div>
+                      <h3 className="text-xl font-semibold text-foreground mb-2">
+                        {member.name}
+                      </h3>
+                      <p className="text-primary font-medium mb-2">
+                        {member.role}
+                      </p>
+                      <p className="text-sm text-muted-foreground mb-4">
+                        {member.experience}
+                      </p>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {member.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
