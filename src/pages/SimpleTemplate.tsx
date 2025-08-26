@@ -77,9 +77,9 @@ const SimpleTemplate = () => {
       {/* About Section */}
       <section id="about" className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-foreground mb-4">Про нашу організацію</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <div className="mb-16 max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4 text-left">Про нашу організацію</h2>
+            <p className="text-lg text-muted-foreground text-left">
               Наша місія - зробити життя людей із труднощами руху більш незалежним і повноцінним через освіту та підтримку спільноти.
             </p>
           </div>
@@ -109,7 +109,7 @@ const SimpleTemplate = () => {
       {/* Quick Links */}
       <section className="py-20 bg-muted">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-foreground mb-12">Корисні розділи</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-center text-foreground mb-12">Корисні розділи</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="bg-card p-6 rounded-lg border hover:shadow-lg transition-shadow">

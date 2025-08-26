@@ -61,7 +61,7 @@ const Contact = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
               {/* Contact Information */}
               <div>
-                <h2 className="text-3xl font-bold text-foreground mb-8">
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">
                   Наші контакти
                 </h2>
                 
@@ -110,7 +110,7 @@ const Contact = () => {
 
                 {/* FAQ Section */}
                 <div className="mt-12">
-                  <h3 className="text-2xl font-bold text-foreground mb-6">
+                  <h3 className="text-xl md:text-2xl font-bold text-foreground mb-6">
                     Часті питання
                   </h3>
                   
@@ -165,7 +165,7 @@ const Contact = () => {
 
               {/* Contact Form */}
               <div>
-                <h2 className="text-3xl font-bold text-foreground mb-8">
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">
                   Форма зворотного зв'язку
                 </h2>
                 <p className="text-muted-foreground mb-8">

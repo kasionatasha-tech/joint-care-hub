@@ -122,7 +122,7 @@ const Article = () => {
                 {article.category}
               </Badge>
               
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-6 leading-tight">
                 {article.title}
               </h1>
               

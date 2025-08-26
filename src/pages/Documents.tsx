@@ -164,7 +164,7 @@ const Documents = () => {
         {/* Contact Section */}
         <section className="py-16 md:py-24 bg-gradient-healing text-white">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6">
               Потрібні додаткові документи?
             </h2>
             <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">

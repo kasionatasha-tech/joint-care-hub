@@ -33,11 +33,11 @@ const JointProblemsOverview = () => {
     <section className="py-16 md:py-24 bg-secondary/30">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+        <div className="mb-16 max-w-5xl mx-auto">
+        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4 text-left">
           Захворювання опорно-рухового апарату
         </h2>
-        <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+        <p className="text-lg text-muted-foreground text-left">
           Розуміння основних захворювань опорно-рухового апарату допомагає краще підготуватися 
           до лікування, реабілітації та знайти найефективніші методи відновлення.
         </p>

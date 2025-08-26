@@ -29,8 +29,8 @@ const AboutSection = () => {
     <section className="py-16 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         {/* Intro Text */}
-        <div className="text-center mb-16 max-w-4xl mx-auto">
-          <p className="text-lg text-muted-foreground leading-relaxed">
+        <div className="mb-16 max-w-5xl mx-auto">
+          <p className="text-lg text-muted-foreground leading-relaxed text-left">
             Ми — громадська організація, що об'єднує людей з захворюваннями опорно-рухового апарату, 
             пацієнтів на реабілітації, фахівців з відновлення та всіх, хто прагне здорового життя. 
             Покращуємо якість життя через доступну інформацію та освітні ресурси.
@@ -38,11 +38,11 @@ const AboutSection = () => {
         </div>
 
         {/* Our Goal */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
+        <div className="mb-16 max-w-5xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4 text-left">
             Наша ціль
           </h2>
-          <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg text-muted-foreground leading-relaxed text-left">
             Покращувати якість життя людей із захворюваннями опорно-рухового апарату шляхом надання 
             доступної інформації, створення освітніх ресурсів, підтримки реабілітації та просвітницької 
             діяльності для здорового, активного та повноцінного життя.

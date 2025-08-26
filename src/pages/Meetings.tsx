@@ -141,11 +141,11 @@ const Meetings = () => {
         {/* Past Meeting Videos */}
         <section className="py-10 bg-secondary/20">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            <div className="mb-8 max-w-5xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4 text-left">
                 Відео попередніх зустрічей
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-lg text-muted-foreground text-left">
                 Перегляньте записи наших попередніх офлайн зустрічей з експертами
               </p>
             </div>
