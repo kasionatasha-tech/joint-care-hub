@@ -6,7 +6,6 @@ import CTASection from "@/components/common/CTASection";
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
-import { CheckCircle2 } from "lucide-react";
 
 const About = () => {
   const team = [
@@ -36,13 +35,6 @@ const About = () => {
     }
   ];
 
-  const achievements = [
-    "Створення спільноти взаємної підтримки",
-    "Доступна медична інформація від експертів",
-    "Безкоштовні зустрічі",
-    "Партнерство з провідними медичними закладами України",
-    "Освітні програми з фізичної реабілітації"
-  ];
 
   useEffect(() => {
     document.title = "Про нас — Osnova Care";
@@ -124,22 +116,6 @@ const About = () => {
                 хто потребує постійного контролю за станом здоров'я, реабілітації та регулярних медичних перевірок для підтримки 
                 здорового і активного способу життя.
               </p>
-            </div>
-
-            {/* Achievements */}
-            <div className="mb-16">
-              <div className="text-center mb-10">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground">Наші досягнення</h2>
-                <div className="h-1 w-20 bg-primary/70 mx-auto mt-3 rounded-full"></div>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
-                {achievements.map((item, idx) => (
-                  <div key={idx} className="flex items-start gap-3 bg-muted/40 border rounded-xl p-4">
-                    <CheckCircle2 className="h-5 w-5 text-primary mt-0.5" aria-hidden="true" />
-                    <p className="text-foreground text-left">{item}</p>
-                  </div>
-                ))}
-              </div>
             </div>
 
             {/* Team Section */}
