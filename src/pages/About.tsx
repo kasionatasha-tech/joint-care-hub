@@ -91,6 +91,19 @@ const About = () => {
               </p>
             </div>
 
+            {/* For Whom We Work */}
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
+                Для кого ми працюємо
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+                Ми працюємо для людей, які стикаються з проблемами опорно-рухового апарату. Наші ресурси орієнтовані на офісних працівників, 
+                спортсменів, активних людей та старших осіб з дегенеративними змінами в суглобах. Ми створюємо можливості для тих, 
+                хто потребує постійного контролю за станом здоров'я, реабілітації та регулярних медичних перевірок для підтримки 
+                здорового і активного способу життя.
+              </p>
+            </div>
+
             {/* Team Section */}
             <div className="mb-16">
               <div className="text-center mb-10">
