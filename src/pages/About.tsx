@@ -1,7 +1,7 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Card, CardContent } from "@/components/ui/card";
-import { Heart, Users, Target, Award, CheckCircle } from "lucide-react";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import CTASection from "@/components/common/CTASection";
 import { Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Link } from "react-router-dom";
@@ -86,28 +86,31 @@ const About = () => {
             </div>
 
             {/* Team Section */}
-            <div className="bg-slate-900 py-16 px-4 rounded-xl mb-16">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
-                  НАША КОМАНДА
+            <div className="mb-16">
+              <div className="text-center mb-10">
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                  Команда
                 </h2>
-                <div className="w-16 h-1 bg-yellow-400 mx-auto rounded-full"></div>
+                <div className="h-1 w-20 bg-primary/70 mx-auto mt-3 rounded-full"></div>
               </div>
-              <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
                 {team.map((member, index) => (
-                  <div key={index} className="text-center">
-                    <div className="w-32 h-32 bg-gray-600 rounded-full mx-auto mb-6 overflow-hidden">
-                      <div className="w-full h-full bg-gray-500 flex items-center justify-center">
-                        <Users className="w-12 h-12 text-gray-300" />
-                      </div>
-                    </div>
-                    <h3 className="text-lg font-bold text-yellow-400 mb-2 uppercase tracking-wide">
-                      {member.name}
-                    </h3>
-                    <p className="text-white font-medium text-sm uppercase tracking-wider">
-                      {member.role}
-                    </p>
-                  </div>
+                  <Card key={index} className="bg-card shadow-card">
+                    <CardContent className="p-6 flex flex-col items-center text-center">
+                      <Avatar className="h-28 w-28 md:h-40 md:w-40 mb-4 ring-2 ring-primary/20">
+                        {/* <AvatarImage src={member.image} alt={`Фото ${member.name}`} /> */}
+                        <AvatarFallback className="bg-brand-blue-light text-brand-gray-dark text-4xl md:text-5xl font-bold">
+                          {member.name.charAt(0)}
+                        </AvatarFallback>
+                      </Avatar>
+                      <h3 className="text-lg md:text-xl font-semibold text-foreground">
+                        {member.name}
+                      </h3>
+                      <p className="text-primary font-medium mt-1">
+                        {member.role}
+                      </p>
+                    </CardContent>
+                  </Card>
                 ))}
               </div>
             </div>
