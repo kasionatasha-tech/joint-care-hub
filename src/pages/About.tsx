@@ -61,7 +61,7 @@ const About = () => {
         {/* About Section */}
         <section className="pt-0 pb-12 bg-background">
           <div className="container mx-auto px-4">
-            <div className="text-right mb-16 max-w-4xl mx-auto">
+            <div className="text-center mb-16 max-w-4xl mx-auto">
               <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
                 Про Нас
               </h1>
@@ -74,7 +74,7 @@ const About = () => {
             </div>
 
             {/* Our Mission */}
-            <div className="text-right mb-16">
+            <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
                 Наша місія
               </h2>
