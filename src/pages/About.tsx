@@ -94,11 +94,11 @@ const About = () => {
             </div>
 
             {/* Our Mission */}
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
+            <div className="mb-16 max-w-4xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4 text-left">
                 Наша місія
               </h2>
-              <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed text-left">
                 Наша місія — покращувати якість життя людей із захворюваннями опорно-рухового апарату шляхом 
                 надання доступної інформації, створення доступних освітніх ресурсів, підтримки реабілітації 
                 та просвітницької діяльності для здорового, активного та повноцінного життя.
@@ -106,11 +106,11 @@ const About = () => {
             </div>
 
             {/* For Whom We Work */}
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
+            <div className="mb-16 max-w-4xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4 text-left">
                 Для кого ми працюємо
               </h2>
-              <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed text-left">
                 Ми працюємо для людей, які стикаються з проблемами опорно-рухового апарату. Наші ресурси орієнтовані на офісних працівників, 
                 спортсменів, активних людей та старших осіб з дегенеративними змінами в суглобах. Ми створюємо можливості для тих, 
                 хто потребує постійного контролю за станом здоров'я, реабілітації та регулярних медичних перевірок для підтримки 
@@ -119,8 +119,8 @@ const About = () => {
             </div>
 
             {/* Основні напрямки підтримки */}
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
+            <div className="mb-16">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6 text-left max-w-5xl mx-auto">
                 Основні напрямки підтримки
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
@@ -147,11 +147,10 @@ const About = () => {
 
             {/* Team Section */}
             <div className="mb-16">
-              <div className="text-center mb-10">
-                <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+              <div className="mb-10 max-w-6xl mx-auto">
+                <h2 className="text-2xl md:text-3xl font-bold text-foreground text-left">
                   Команда
                 </h2>
-                <div className="h-1 w-20 bg-primary/70 mx-auto mt-3 rounded-full"></div>
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
                 {team.map((member, index) => (
