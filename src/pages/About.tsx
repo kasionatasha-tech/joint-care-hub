@@ -118,6 +118,33 @@ const About = () => {
               </p>
             </div>
 
+            {/* Основні напрямки підтримки */}
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
+                Основні напрямки підтримки
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+                <div className="bg-card border rounded-xl p-6 text-center hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-foreground">Захворювання суглобів</h3>
+                </div>
+                <div className="bg-card border rounded-xl p-6 text-center hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-foreground">Захворювання хребта</h3>
+                </div>
+                <div className="bg-card border rounded-xl p-6 text-center hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-foreground">Больові синдроми</h3>
+                </div>
+                <div className="bg-card border rounded-xl p-6 text-center hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-foreground">Неврологічні захворювання</h3>
+                </div>
+                <div className="bg-card border rounded-xl p-6 text-center hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-foreground">Порушення ОРА у дітей</h3>
+                </div>
+                <div className="bg-card border rounded-xl p-6 text-center hover:shadow-md transition-shadow">
+                  <h3 className="text-lg font-semibold text-foreground">Реабілітація та профілактика</h3>
+                </div>
+              </div>
+            </div>
+
             {/* Team Section */}
             <div className="mb-16">
               <div className="text-center mb-10">
