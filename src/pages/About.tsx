@@ -69,17 +69,6 @@ const About = () => {
               </p>
             </div>
 
-            {/* Our Goal */}
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
-                Наша ціль
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-                Ми прагнемо зробити життя людей із труднощами руху більш незалежним і повноцінним. 
-                Через відкриту освіту, просвітницькі ініціативи та розвиток спільноти ми підтримуємо тих, 
-                хто стикається з фізичними викликами, і допомагаємо знайти нові можливості для участі в житті суспільства.
-              </p>
-            </div>
 
             {/* Why We Do This */}
             <div className="text-center mb-16">
